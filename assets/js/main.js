@@ -4,6 +4,7 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+$(document).ready(function () {
 (function($) {
 
 	var	$window = $(window),
@@ -94,3 +95,40 @@
 		}
 
 })(jQuery);
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    let submenus = document.querySelectorAll(".has-submenu > a");
+
+    submenus.forEach((menu) => {
+        menu.addEventListener("click", function (event) {
+            event.preventDefault(); // Zapobiega przeładowaniu strony
+            let submenuList = this.nextElementSibling;
+
+            // Ukrywa wszystkie inne submenu przed otwarciem nowego
+            document.querySelectorAll(".has-submenu ul").forEach(ul => {
+                if (ul !== submenuList) {
+                    ul.style.display = "none";
+                }
+            });
+
+            // Przełączanie widoczności submenu
+            if (submenuList.style.display === "block") {
+                submenuList.style.display = "none";
+            } else {
+                submenuList.style.display = "block";
+            }
+        });
+    });
+
+    // Zamknij menu po kliknięciu poza nim
+    document.addEventListener("click", function (event) {
+        let isClickInside = event.target.closest(".has-submenu");
+        if (!isClickInside) {
+            document.querySelectorAll(".has-submenu ul").forEach(ul => {
+                ul.style.display = "none";
+            });
+        }
+    });
+});
+});
