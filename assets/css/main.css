@@ -1948,12 +1948,12 @@ input, select, textarea {
     background: #829bc9;
 }
 
-.icon.circle.fa-google-plus-g {
+.icon.circle.fa-google{
     background: #db6b67;
     color: #fff;
 }
 
-.icon.circle.fa-google-plus-g:hover {
+.icon.circle.fa-google:hover {
     background: #df7b77;
 }
 
@@ -1964,6 +1964,15 @@ input, select, textarea {
 
 .icon.circle.fa-github:hover {
     background: #e1b89b;
+}
+
+.icon.circle.fa-linkedin {
+    background: #0077b5;
+    color: #fff;
+}
+
+.icon.circle.fa-linkedin:hover {
+    background: #2595b4;
 }
 
 .icon.circle.fa-dribbble {
@@ -2641,6 +2650,7 @@ input, select, textarea {
 		color: #7c8081;
 		padding: 5em 5em 10em 5em;
 		text-align: center;
+		margin-bottom: 10px;
 	}
 
 		#footer .copyright {
