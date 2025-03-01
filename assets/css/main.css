@@ -1900,7 +1900,7 @@ input, select, textarea {
 				width: 100%; /* Dostosowanie do szerokości okna */
 				height: auto; /* Zachowanie proporcji obrazu */
 				transform-origin: center; /* Powiększanie od środka obrazu */
-				transition: transform 0.3s ease-in-out;
+				transition: transform 0.1s ease-in-out;
 			}
 
 /* Możemy także dodać efekty do figcaption, aby nie był on zasłonięty */
