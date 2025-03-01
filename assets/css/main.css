@@ -1763,7 +1763,7 @@ input, select, textarea {
 
 		header.special .icon {
 			cursor: default;
-			height: 3em;
+			height: 7em;
 			left: 0;
 			position: absolute;
 			text-align: center;
@@ -1883,8 +1883,31 @@ input, select, textarea {
 				background: none !important; /* Usuwamy tło */
 				margin: 0 !important; /* Usuwamy margines */
 				padding: 0 !important; /* Usuwamy padding */
-				border: 2px solid #000; /* Cienka ramka o grubości 2px i kolorze czarnym */
+				border: 1px solid #1c1b1b; /* Cienka ramka o grubości 2px i kolorze czarnym */
+				transition: transform 0.1s ease-in-out;
+    			cursor: pointer;
+				max-width: 100%;
 			}
+
+			/* Powiększenie obrazu po kliknięciu */
+			.zoomed {
+				position: relative; /* Teraz obrazek będzie "oderwany" od strony */
+				z-index: 10; /* Zapewnia, że obrazek będzie na wierzchu */
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				width: 100%; /* Dostosowanie do szerokości okna */
+				height: auto; /* Zachowanie proporcji obrazu */
+				transform-origin: center; /* Powiększanie od środka obrazu */
+				transition: transform 0.3s ease-in-out;
+			}
+
+/* Możemy także dodać efekty do figcaption, aby nie był on zasłonięty */
+figcaption {
+    position: relative;
+    z-index: 1;
+}
 
 /* Icon */
 .icon {
@@ -3400,4 +3423,14 @@ nav ul ul ul {
     left: 100%;
     top: 0;
 }
-	
+
+/* Styl początkowy */
+.image.featured img {
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+/* Powiększenie obrazu po kliknięciu */
+.zoomed {
+    transform: scale(1.5); /* Powiększamy obrazek o 1.5 razy */
+}

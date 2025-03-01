@@ -133,5 +133,42 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 });
 
+function zoomImage(event) {
+    event.preventDefault();  // Zapobiegamy domyślnemu działaniu linku (czyli przeładowaniu strony)
+
+    // Znajdujemy kliknięty obrazek
+    const image = event.target;
+
+    // Sprawdzamy, czy obrazek jest już powiększony
+    if (image.classList.contains('zoomed')) {
+        // Jeśli tak, to usuwamy klasę powiększającą
+        image.classList.remove('zoomed');
+        image.style.transform = ''; // Resetujemy transformację
+    } else {
+        // Jeśli nie, to dodajemy klasę powiększającą
+        image.classList.add('zoomed');
+
+        // Obliczamy szerokość okna
+        const windowWidth = window.innerWidth;
+
+        // Obliczamy szerokość obrazu
+        const imageWidth = image.width;
+
+        // Obliczamy współczynnik skali w oparciu o szerokość okna i obrazu
+        const scaleFactor = windowWidth / imageWidth;
+
+        // Ustalamy minimalny i maksymalny współczynnik skali
+        const minScale = 1;  // minimalna skala (brak powiększenia)
+        const maxScale = 2;  // maksymalna skala (powiększenie o 2 razy)
+
+        // Ustalamy wartość skali, która będzie stosowana
+        const scale = Math.min(Math.max(scaleFactor, minScale), maxScale);
+
+        // Stosujemy obliczoną wartość skali
+        image.style.transform = `scale(${scale})`; 
+    }
+}
+
+
 
 

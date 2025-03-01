@@ -32,16 +32,6 @@
 								<li><a href="right-sidebar.html">Right Sidebar</a></li>
 								<li><a href="no-sidebar.html">No Sidebar</a></li>
 								<li><a href="contact.html">Contact</a></li>
-								<li class="submenu has-submenu">
-									<a href="#">Submenu</a>
-									<ul>
-										<li><a href="#">Dolore Sed</a></li>
-										<li><a href="#">Consequat</a></li>
-										<li><a href="#">Lorem Magna</a></li>
-										<li><a href="#">Sed Magna</a></li>
-										<li><a href="#">Ipsum Nisl</a></li>
-									</ul>
-								</li>
 							</ul>
 						</li>
 					</ul>
@@ -65,7 +55,7 @@
 							<!-- Content -->
 								<div class="content">
 									<section>
-											<h3><b>Opis projektu</b></h3>
+											<h1><b>Opis projektu</b></h1>
 										<p>Projekt polegał na stworzeniu raportu analitycznego w narzędziu Microsoft Power BI. Głównym celem finalnego produktu jest możliwość przeprowadzenia analizy sprzedaży produktów w kontekście różnych czynników. Raport został zbudowany, aby wspierać procesy decyzyjne, dostarczając kluczowych informacji o wynikach sprzedaży, rentowności, liczbie transakcji oraz sezonowości. Cały proces obejmował przygotowanie danych, budowę modelu analitycznego oraz opracowanie finalnych wizualizacji, które umożliwiają interaktywną analizę danych w różnych ujęciach.</p>
 
 										<p>Raport składa się z czterech kart: </p>
@@ -85,15 +75,15 @@
 											<li> Drzewo dekompozycji - wizaualizacja dynamiczna, umożliwiająca analizę wybranej wielkości: marży, kosztów lub sprzedaży pod kątem nałożonych przez Użytkownika filtrów. </li>
 										</ol>
 										<figure>
-											<a href="#" class="image featured">
-												<img src="images/CoffeShop2.png" alt="" />
+											<a href="#" class="image featured" onclick="zoomImage(event)">
+												<img src="images/CoffeShop2.png" alt="Obrazek" />
 											</a>
-											<figcaption class="caption">Rys. 1. Widok karty Sprzedaż z nałożonym filtrem na rok 2023 oraz widoczną informacją dodatkową w postaci dymka.</figcaption>
+											<figcaption class="caption">Rys. 1. Widok karty Sprzedaż z nałożonym filtrem na rok 2023.</figcaption>
 										</figure>
 										
 										<style>
 											.caption {
-												font-size: 14px; /* Zmienia rozmiar czcionki */
+												font-size: 12px; /* Zmienia rozmiar czcionki */
 												color: #555; /* Zmienia kolor tekstu */
 												text-align: center; /* Wyrównuje tekst do środka */
 												margin-top: 1px;  /* Dodaje odstęp powyżej podpisu */
@@ -106,7 +96,7 @@
 									    Natomiast, <b>drzewo dekompozycji</b> (Rys.3.), umieszczone na ostatniej karcie to dynamiczna i interaktywna wizualizacja, która pozwala na analizę danych w wielu wymiarach. Automatycznie agreguje dane i umożliwia przechodzenie do szczegółów w dowolnej kolejności. 
 										Drzewo dekompozycji jest potężnym narzędziem do analizy danych, które może znacząco ułatwić zrozumienie złożonych zestawów danych i podejmowanie decyzji biznesowych. </p>
 										<figure>
-											<a href="#" class="image featured">
+											<a href="#" class="image featured" onclick="zoomImage(event)">
 												<img src="images/CoffeShop3.png" alt="" />
 											</a>
 											<figcaption class="caption">Rys. 2. Widok karty Produkty - umożliwiającej szczegółową analizę danych.</figcaption>
@@ -114,7 +104,7 @@
 										
 										<style>
 											.caption {
-												font-size: 14px; /* Zmienia rozmiar czcionki */
+												font-size: 12px; /* Zmienia rozmiar czcionki */
 												color: #555; /* Zmienia kolor tekstu */
 												text-align: center; /* Wyrównuje tekst do środka */
 												margin-top: 1px;  /* Dodaje odstęp powyżej podpisu */
@@ -124,7 +114,7 @@
 
 
 												<figure>
-													<a href="#" class="image featured">
+													<a href="#" class="image featured" onclick="zoomImage(event)">
 														<img src="images/CoffeShop4.png" alt="" />
 													</a>
 													<figcaption class="caption">Rys. 3. Prezentacja wizualizacji drzewo dekompozycji.</figcaption>
@@ -132,7 +122,7 @@
 												
 												<style>
 													.caption {
-														font-size: 14px; /* Zmienia rozmiar czcionki */
+														font-size: 12px; /* Zmienia rozmiar czcionki */
 														color: #555; /* Zmienia kolor tekstu */
 														text-align: center; /* Wyrównuje tekst do środka */
 														margin-top: 1px;  /* Dodaje odstęp powyżej podpisu */
@@ -141,7 +131,7 @@
 												</style>
 									</section>
 									<header>
-										<h3><b>ZALETY BUDOWANIA RAPORTÓW W POWER BI</b></h3>
+										<h1><b>ZALETY BUDOWANIA RAPORTÓW W POWER BI</b></h1>
 										
 									</header>
 									<p>Dynamiczne wizualizacje w Power BI oferują wiele zalet, które mogą znacząco poprawić analizę i prezentację danych. Do najważniejszych z nich można zaliczyć:</p>
@@ -185,42 +175,45 @@
 
 									<section>
 										<header>
-											<h3>This is Something</h3>
+											<h3>Raport w Tableau</h3>
+											<a href="CoffeShop.html" class="image featured" style="margin-bottom: 10px;"><img src="images/RaportTableau.png" alt="" /></a>
 										</header>
-										<p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
+										<p>Raport typu Overview prezentujący ogólne wskaźniki danych sprzedażowych.</p>
 										<footer>
 											<ul class="buttons">
-												<li><a href="#" class="button small">Learn More</a></li>
+												<li><a href="#" class="button small">więcej</a></li>
 											</ul>
 										</footer>
 									</section>
-
 								</div>
+								
 								<div class="col-4 col-12-narrower">
 
 									<section>
 										<header>
-											<h3>Also Something</h3>
+											<h3>Analiza Python</h3>
+											<a href="CoffeShop.html" class="image featured" style="margin-bottom: 10px;"><img src="images/AnalizaPython.png" alt="" /></a>
 										</header>
-										<p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
+										<p>Analiza danych dotycząca odpływu klientów wykonana w Jupyter Notebook.</p>
 										<footer>
 											<ul class="buttons">
-												<li><a href="#" class="button small">Learn More</a></li>
+												<li><a href="#" class="button small">więcej</a></li>
 											</ul>
 										</footer>
-									</section>
-
+									</section>						
 								</div>
+								
 								<div class="col-4 col-12-narrower">
 
 									<section>
 										<header>
-											<h3>Probably Something</h3>
+											<h3>Analiza SQL</h3>
+											<a href="CoffeShop.html" class="image featured" style="margin-bottom: 10px;"><img src="images/CovidSQL.png" alt="" /></a>
 										</header>
-										<p>Sed tristique purus vitae volutpat ultrices. Aliquam eu elit eget arcu commodo suscipit dolor nec nibh. Proin a ullamcorper elit, et sagittis turpis. Integer ut fermentum.</p>
+										<p>Zbiór zapytań SQL utworzonych w celu analizy danych COVID-19.</p>
 										<footer>
 											<ul class="buttons">
-												<li><a href="#" class="button small">Learn More</a></li>
+												<li><a href="#" class="button small">więcej</a></li>
 											</ul>
 										</footer>
 									</section>
