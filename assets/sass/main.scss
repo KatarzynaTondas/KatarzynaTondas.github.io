@@ -779,8 +779,23 @@ $pattern-background-size: 25em;
 			color: _palette(two, fg);
 			padding: 4em;
 		}
+
+		.wrapper.style3.container.special {
+			padding: 3em 2em; /* Zmniejsza padding na górze/dole */
+			margin-bottom: 3em; /* Zmniejsza odstęp na dole */
+		}
+	}
+	body.no-sidebar .wrapper.style3.container.special {
+		padding: 3em 2em !important; /* Zwiększa odstępy */
+		margin-bottom: 3em !important; /* Zmniejsza odstęp na dole */
+	}
+	
+	body.is-preload .wrapper.style3.container.special {
+		padding: 3em 2em !important;
+		margin-bottom: 3em !important;
 	}
 
+	
 /* Header */
 
 	@include keyframes('reveal-header') {
