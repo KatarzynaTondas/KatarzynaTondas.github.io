@@ -45,8 +45,8 @@
 
 				<header class="special container">
 					<span class="icon solid fa-chart-area"></span>
-					<h1><span style="color: #83d3c9;"><b>Overview Dashboard</b> </span><strong> - jednostronnicowy rapot Tableau</strong></h1>
-					<p>prezentujący główne wskaźniki sprzedażowe</p>
+					<h1><span style="color: #83d3c9;"><b>COVID-19 - zachorowania i szczepienia</b> </span><strong> - analiza danych</strong></h1>
+					<p>wykonana z użyciem języka baz danych SQL</p>
 				</header>
 					
 					<!-- One -->
@@ -56,9 +56,9 @@
 								<div class="content">
 									<section>
 											<h1><b>Opis projektu</b></h1>
-										<p>Projekt polegał na stworzeniu jednostronnicowego raportu prezentującego główne wskaźniki danych sprzedażowych. Został wykonany w narzędziu Tableau od Salesforce Inc. Raport koncentruje się na kluczowych wskaźnikach takich jak sprzedaż, zysk i liczba zamówień, eliminując zbędne szczegóły, aby ułatwić szybkie podejmowanie decyzji. Raport umożliwia interaktywne filtrowaie danych na wizualizacjach za pomoc panelu filtrów oraz poprzez wybieranie odpowiednich elementów na wykresach.</p>
+										<p>Celem projektu była analiza danych dotyczących pandemii COVID-19 z wykorzystaniem SQL. Badanie obejmowało dynamikę rozprzestrzeniania się wirusa, wskaźniki śmiertelności oraz postęp szczepień w różnych regionach świata. Wyniki analizy dostarczają cennych informacji, które mogą wspierać decyzje w zakresie zdrowia publicznego.</p>
 
-										<p>Interaktywny raport jest dostępny <a href="https://public.tableau.com/app/profile/katarzyna.tonda./viz/SampleSuperstore_17408250946510/Dashboard12/">pod linkiem.</a></p>
+										<p>Analiza danych wraz z opisem i kodem SQL jest dostępna <a href="https://github.com/KatarzynaTondas/PortfolioSQL/"> w repozytorium Github.</a></p>
 										<style>
 											ol {
 												margin: 2; /* Zmniejsza margines wokół listy */
@@ -78,9 +78,9 @@
 									-->
 										<figure>
 											<a href="#" class="image featured" onclick="zoomImage(event)">
-												<img src="images/RaportTableau.png" alt="Obrazek" />
+												<img src="images/ChurnPaymentMethod.png" alt="Obrazek" />
 											</a>
-											<figcaption class="caption">Rys. 1. Prezentacja interaktywnego raportu Tableau.</figcaption>
+											<figcaption class="caption">Rys. 1. Przykładowa analiza danych przy pomocy Python - metoda płatności za usługi telekomunikacyjne a rezygnacja klientów.</figcaption>
 										</figure>
 										
 										<style>
@@ -92,6 +92,42 @@
 												margin-bottom: 20px;
 											}
 										</style>
+							
+										<h1><b>Zakres analizy</b></h1>
+										<ol>
+											<li> <b>Eksploracja danych</b> - weryfikacja kompletności i struktury zbioru danych.</li>
+											<li> <b>Wskaźniki śmiertelności</b> - obliczenie odsetka zgonów względem liczby zakażeń, identyfikacja regionów o najwyższej śmiertelności.</li>
+											<li> <b>Zasięg pandemii</b> - analiza odsetka populacji zakażonej w różnych krajach i kontynentach.</li>
+											<li> <b>Najbardziej dotknięte obszary</b> - identyfikacja państw o najwyższych wskaźnikach zakażeń w stosunku do populacji.</li>
+											<li> <b>Trendy globalne</b> - analiza dziennej liczby nowych przypadków i zgonów, określenie dynamiki pandemii.</li>	
+											<li> <b>Szczepienia</b> - ocena zależności między liczbą zaszczepionych a populacją.</li>
+												
+										<section>
+											<figure>
+												<a href="#" class="image featured" onclick="zoomImage(event)">
+													<img src="images/CovidSQL.png" alt="Obrazek" />
+												</a>
+												<figcaption class="caption">Rys. 1. Fragment kodu z analizą SQL.</figcaption>
+											</figure>
+											</section>
+											</ol>
+
+											
+											<p>Analiza pozwoliła na lepsze zrozumienie przebiegu pandemii i jej skutków. Identyfikacja obszarów o najwyższych wskaźnikach zakażeń i śmiertelności może umożliwić lepsze ukierunkowanie działań prewencyjnych i polityki zdrowotnej. Z kolei analiza postępu szczepień może dostarczyć informacji kluczowych dla oceny skuteczności kampanii szczepionkowych.</p>
+										<h1><b>Zalety wykorzystania języka SQL w projekcie</b></h1>								
+										<ol>
+											<li><b>Efektywne przetwarzanie dużych zbiorów danych</b> – język SQL oraz silnik baz danych są zoptymalizowane pod kątem pracy z dużymi zbiorami danych, co pozwala na szybkie przetwarzanie milionów rekordów, nawet w przypadku globalnych danych o pandemii.</li>
+										
+											<li><b>Możliwość zaawansowanej analizy</b> – język SQL umożliwia stosowanie złożonych zapytań, agregacji, filtrowania oraz obliczeń statystycznych, co pozwala na analizę trendów, porównywanie regionów i identyfikację obszarów szczególnie dotkniętych pandemią.</li>
+										
+											<li><b>Strukturalna organizacja danych</b> – dane są przechowywane w relacyjnych bazach danych, co zapewnia ich spójność, integralność i łatwy dostęp do kluczowych informacji, takich jak liczba zakażeń, zgonów czy szczepień w podziale na kraje i kontynenty.</li>
+										
+											<li><b>Możliwość łączenia różnych źródeł danych</b> – SQL pozwala na łatwe łączenie tabel, np. danych o zakażeniach i szczepieniach, co umożliwia analizę zależności między rozwojem pandemii a postępem kampanii szczepień.</li>
+										
+											<li><b>Reużywalność zapytań i automatyzacja</b> – zapytania SQL można zapisywać jako widoki (<i>views</i>), procedury składowane lub używać CTE i tabel tymczasowych, co ułatwia ponowną analizę danych i automatyzację raportowania.</li>
+										</ol>
+										
+
 <!--
 										Jednym z założeń, którym kierowałam się podczas projektowania układu raportu była prezentacja danych w ujęciu od ogółu do szczegółu. Zostało to zrealizowane poprzez budowę trzech kart raportu, a każda z nich umożliwia przeprowadzenie coraz bardziej szczegółowej analizy. Karta <b>Sprzedaż</b> (Rys.1.) została tak zaprojektowana, aby dawać ogólny wgląd w analizę sprzedży, kosztów i marży. 
 										Karta <b>Produkty</b> (Rys. 2.) umożliwia zagłębienie się w dalsze szczegóły wskaźników, które zainteresowały Użytkownika raportu.
@@ -194,29 +230,29 @@
 
 									<section>
 										<header>
-											<h3>Analiza Python</h3>
-											<a href="AnalizaPython.html" class="image featured" style="margin-bottom: 10px;"><img src="images/AnalizaPython.png" alt="" /></a>
+											<h3>Raport w Tableau</h3>
+											<a href="RaportTableau.html" class="image featured" style="margin-bottom: 10px;"><img src="images/RaportTableau.png" alt="" /></a>
 										</header>
-										<p>Analiza danych dotycząca odpływu klientów wykonana w Jupyter Notebook.</p>
+										<p>Raport typu Overview prezentujący ogólne wskaźniki danych sprzedażowych.</p>
 										<footer>
 											<ul class="buttons">
-												<li><a href="#" class="button small">więcej</a></li>
+												<li><a href="RaportTableau.html" class="button small">więcej</a></li>
 											</ul>
 										</footer>
-									</section>						
+									</section>
 								</div>
 								
 								<div class="col-4 col-12-narrower">
 
 									<section>
 										<header>
-											<h3>Analiza SQL</h3>
-											<a href="AnalizaSQL.html" class="image featured" style="margin-bottom: 10px;"><img src="images/CovidSQL.png" alt="" /></a>
+											<h3>Analiza Python</h3>
+											<a href="AnalizaPython.html" class="image featured" style="margin-bottom: 10px;"><img src="images/AnalizaPython.png" alt="" /></a>
 										</header>
-										<p>Zbiór zapytań SQL utworzonych w celu analizy danych COVID-19.</p>
+										<p>Analiza danych dotycząca odpływu klientów wykonana w Jupyter Notebook.</p>
 										<footer>
 											<ul class="buttons">
-												<li><a href="#" class="button small">więcej</a></li>
+												<li><a href="AnalizaPython.html" class="button small">więcej</a></li>
 											</ul>
 										</footer>
 									</section>
