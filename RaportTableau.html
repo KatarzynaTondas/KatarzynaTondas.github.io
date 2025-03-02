@@ -30,8 +30,8 @@
 							<ul>
 								<li><a href="CoffeShop.html">Coffe Shop - raport Power BI</a></li>
 								<li><a href="RaportTableau.html">Overview Dashboard - raport Tableau</a></li>
-								<li><a href="AnalizaPython.html">Analiza powodu odpływu klientów wykonana w języku Python</a></li>
-								<li><a href="AnalizaSQL.html">Contact</a></li>
+								<li><a href="AnalizaPython.html">Powody odpływu klientów - analiza Python</a></li>
+								<li><a href="AnalizaSQL.html">COVID-19 - analiza SQL</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -45,8 +45,8 @@
 
 				<header class="special container">
 					<span class="icon solid fa-chart-area"></span>
-					<h1><span style="color: #83d3c9;"><b>Coffee Shop</b> </span><strong> interaktywny raport Power BI</strong></h1>
-					<p>dotyczący analizy danych sprzedażowych</p>
+					<h1><span style="color: #83d3c9;"><b>Overview Dashboard</b> </span><strong> - jednostronnicowy rapot Tableau</strong></h1>
+					<p>prezentujący główne wskaźniki sprzedażowe</p>
 				</header>
 					
 					<!-- One -->
@@ -56,9 +56,9 @@
 								<div class="content">
 									<section>
 											<h1><b>Opis projektu</b></h1>
-										<p>Projekt polegał na stworzeniu raportu analitycznego w narzędziu Microsoft Power BI. Głównym celem finalnego produktu jest możliwość przeprowadzenia analizy sprzedaży produktów w kontekście różnych czynników. Raport został zbudowany, aby wspierać procesy decyzyjne, dostarczając kluczowych informacji o wynikach sprzedaży, rentowności, liczbie transakcji oraz sezonowości. Cały proces obejmował przygotowanie danych, budowę modelu analitycznego oraz opracowanie finalnych wizualizacji, które umożliwiają interaktywną analizę danych w różnych ujęciach.</p>
+										<p>Projekt polegał na stworzeniu jednostronnicowego raportu prezentującego główne wskaźniki danych sprzedażowych. Został wykonany w narzędziu Tableau od Salesforce Inc. Raport koncentruje się na kluczowych wskaźnikach takich jak sprzedaż, zysk i liczba zamówień, eliminując zbędne szczegóły, aby ułatwić szybkie podejmowanie decyzji. Raport umożliwia interaktywne filtrowaie danych na wizualizacjach za pomoc panelu filtrów oraz poprzez wybieranie odpowiednich elementów na wykresach.</p>
 
-										<p>Raport składa się z czterech kart: </p>
+										<p>Interaktywny raport jest dostępny <a href="https://public.tableau.com/app/profile/katarzyna.tonda./viz/SampleSuperstore_17408250946510/Dashboard12/">pod linkiem.</a></p>
 										<style>
 											ol {
 												margin: 2; /* Zmniejsza margines wokół listy */
@@ -68,17 +68,19 @@
 												margin-bottom: 5px; /* Zmniejsza odstęp między elementami listy */
 											}
 										</style>
+										<!--
 										<ol>
 											<li> Strona tytułowa - strona wstępna z wprowadzeniem do raportu.</li>
 											<li> Sprzedaż - karta prezentująca główne wskaźniki KPI, trend sprzedaży oraz kosztów w wybranym przez Użytkownika raportu okresie w odniesieniu do marży %. </li>
 											<li> Produkty - karta zawierająca dane szczegółowe dotyczące sprzedaży poszczególnych produktów m.in. według kategorii, top sprzedających się produktów, sprzedaży narastająco w ujęciu MTD oraz YTD, udziału sprzedaży produktów zawierających alergeny. </li>
 											<li> Drzewo dekompozycji - wizaualizacja dynamiczna, umożliwiająca analizę wybranej wielkości: marży, kosztów lub sprzedaży pod kątem nałożonych przez Użytkownika filtrów. </li>
 										</ol>
+									-->
 										<figure>
 											<a href="#" class="image featured" onclick="zoomImage(event)">
-												<img src="images/CoffeShop2.png" alt="Obrazek" />
+												<img src="images/RaportTableau.png" alt="Obrazek" />
 											</a>
-											<figcaption class="caption">Rys. 1. Widok karty Sprzedaż z nałożonym filtrem na rok 2023.</figcaption>
+											<figcaption class="caption">Rys. 1. Prezentacja interaktywnego raportu Tableau.</figcaption>
 										</figure>
 										
 										<style>
@@ -90,7 +92,7 @@
 												margin-bottom: 20px;
 											}
 										</style>
-
+<!--
 										Jednym z założeń, którym kierowałam się podczas projektowania układu raportu była prezentacja danych w ujęciu od ogółu do szczegółu. Zostało to zrealizowane poprzez budowę trzech kart raportu, a każda z nich umożliwia przeprowadzenie coraz bardziej szczegółowej analizy. Karta <b>Sprzedaż</b> (Rys.1.) została tak zaprojektowana, aby dawać ogólny wgląd w analizę sprzedży, kosztów i marży. 
 										Karta <b>Produkty</b> (Rys. 2.) umożliwia zagłębienie się w dalsze szczegóły wskaźników, które zainteresowały Użytkownika raportu.
 									    Natomiast, <b>drzewo dekompozycji</b> (Rys.3.), umieszczone na ostatniej karcie to dynamiczna i interaktywna wizualizacja, która pozwala na analizę danych w wielu wymiarach. Automatycznie agreguje dane i umożliwia przechodzenie do szczegółów w dowolnej kolejności. 
@@ -164,10 +166,11 @@
     								list-style-type: disc;
 									}
 								</style>
+								-->
 								</div>
 
 						</section>
-
+							
 					<!-- Two -->
 						<section class="wrapper style1 container special">
 							<div class="row">
@@ -175,13 +178,13 @@
 
 									<section>
 										<header>
-											<h3>Raport w Tableau</h3>
-											<a href="Raport" class="image featured" style="margin-bottom: 10px;"><img src="images/RaportTableau.png" alt="" /></a>
+											<h3>Raport w Power BI</h3>
+											<a href="CoffeShop.html" class="image featured" style="margin-bottom: 10px;"><img src="images/CoffeShop.png" alt="" /></a>
 										</header>
-										<p>Raport typu Overview prezentujący ogólne wskaźniki danych sprzedażowych.</p>
+										<p>Raport Coffe Shop wykonany w Power BI dotyczący analizy danych sprzedażowych.</p>
 										<footer>
 											<ul class="buttons">
-												<li><a href="RaportTableau.html" class="button small">więcej</a></li>
+												<li><a href="CoffeShop.html" class="button small">więcej</a></li>
 											</ul>
 										</footer>
 									</section>
@@ -192,12 +195,12 @@
 									<section>
 										<header>
 											<h3>Analiza Python</h3>
-											<a href="AnalizaPython.html" class="image featured" style="margin-bottom: 10px;"><img src="images/AnalizaPython.png" alt="" /></a>
+											<a href="CoffeShop.html" class="image featured" style="margin-bottom: 10px;"><img src="images/AnalizaPython.png" alt="" /></a>
 										</header>
 										<p>Analiza danych dotycząca odpływu klientów wykonana w Jupyter Notebook.</p>
 										<footer>
 											<ul class="buttons">
-												<li><a href="AnalizaPython.html" class="button small">więcej</a></li>
+												<li><a href="#" class="button small">więcej</a></li>
 											</ul>
 										</footer>
 									</section>						
@@ -208,12 +211,12 @@
 									<section>
 										<header>
 											<h3>Analiza SQL</h3>
-											<a href="AnalizaSQL.html" class="image featured" style="margin-bottom: 10px;"><img src="images/CovidSQL.png" alt="" /></a>
+											<a href="CoffeShop.html" class="image featured" style="margin-bottom: 10px;"><img src="images/CovidSQL.png" alt="" /></a>
 										</header>
 										<p>Zbiór zapytań SQL utworzonych w celu analizy danych COVID-19.</p>
 										<footer>
 											<ul class="buttons">
-												<li><a href="AnalizaSQL.html" class="button small">więcej</a></li>
+												<li><a href="#" class="button small">więcej</a></li>
 											</ul>
 										</footer>
 									</section>

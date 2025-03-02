@@ -34,7 +34,7 @@ body {
 }
 
 ol, ul {
-	list-style: none;
+	list-style: yes;
 }
 
 blockquote, q {
@@ -2026,34 +2026,47 @@ figcaption {
 
 /* List */
 
-	ol {
-		list-style: decimal;
-		padding-left: 1.25em;
-	}
-
-		ol li {
-			padding-left: 0.25em;
-		}
-
-	ul {
-		list-style: disc;
-		padding-left: 1em;
-	}
-
-		ul li {
-			padding-left: 0.5em;
-		}
+ol {
+	list-style: decimal;  /* First-level ordered list */
+	padding-left: 1.25em;
+  }
+  
+  ol li {
+	padding-left: 0.25em;
+  }
+  
+  ol li > ul {
+	list-style-type: disc;  /* Second-level unordered list in ordered list should have black dots */
+	padding-left: 1.25em;  /* Adjust padding for nested unordered list */
+  }
+  
+  ul {
+	list-style: disc;  /* First-level unordered list with bullets */
+	padding-left: 1em;
+  }
+  
+  ul li {
+	padding-left: 0.5em;
+  }
+  
+  ul li > ol {
+	list-style-type: decimal;  /* Second-level ordered list in unordered list should have numbers */
+	padding-left: 1.25em;  /* Adjust padding for nested ordered list */
+  }
+  
 
 /* Icons */
 
 	ul.icons {
 		list-style: none;
+		content: "•";  /* Custom bullet */
 		padding-left: 0;
 		cursor: default;
 	}
 
 		ul.icons li {
 			display: inline-block;
+			content: "•";  /* Custom bullet */
 			line-height: 1em;
 			padding-left: 0.5em;
 		}
@@ -2570,8 +2583,8 @@ figcaption {
             background-attachment: scroll, scroll, scroll, fixed;
             background-color: #83d3c9;
             background-image: 
-                url("images/light-bl.svg"), 
-                url("images/light-br.svg"), 
+                url("images/dark-bl.svg"), 
+                url("images/dark-br.svg"), 
                 url("images/overlay.png"), 
                 linear-gradient(75deg, #83d3c9 15%, #F2B69D 55%);
             background-position: bottom left, bottom right, top left, top center;
@@ -2594,7 +2607,7 @@ figcaption {
 			-webkit-animation-fill-mode: forwards;
 			-ms-animation-fill-mode: forwards;
 			animation-fill-mode: forwards;
-			background: rgba(52, 27, 43, 0.5);
+			background: rgba(10, 5, 8, 0.5);
 			color: #fff;
 			display: inline-block;
 			opacity: 0;
@@ -2674,8 +2687,8 @@ figcaption {
 	background-attachment: scroll, scroll, scroll, fixed;
 	background-color: #83d3c9;
 	background-image: 
-		url("images/light-tl.svg"), 
-		url("images/light-tr.svg"), 
+		url("images/dark-tl.svg"), 
+		url("images/dark-tr.svg"), 
 		url("images/overlay.png"), 
 		linear-gradient(75deg, #83d3c9 15%, #F2B69D 55%);
 	background-position: top left, top right, top left, bottom center;
@@ -3408,11 +3421,11 @@ figcaption {
 	}
 
 	ul {
-		list-style-type: none;
+		list-style-type: yes;
 	}
 	
 	ul ul {
-		display: none;
+		display: yes;
 	}
 	
 	ul li:hover > ul {
@@ -3422,7 +3435,7 @@ figcaption {
 
 /* Resetowanie stylów listy */
 ul {
-    list-style-type: none;
+    list-style-type: yes;
     margin: 0;
     padding: 0;
 }

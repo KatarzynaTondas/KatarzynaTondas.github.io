@@ -30,8 +30,8 @@
 							<ul>
 								<li><a href="CoffeShop.html">Coffe Shop - raport Power BI</a></li>
 								<li><a href="RaportTableau.html">Overview Dashboard - raport Tableau</a></li>
-								<li><a href="AnalizaPython.html">Analiza powodu odpływu klientów wykonana w języku Python</a></li>
-								<li><a href="AnalizaSQL.html">Contact</a></li>
+								<li><a href="AnalizaPython.html">Powody odpływu klientów - analiza Python</a></li>
+								<li><a href="AnalizaSQL.html">COVID-19 - analiza SQL</a></li>
 							</ul>
 						</li>
 					</ul>
@@ -45,8 +45,8 @@
 
 				<header class="special container">
 					<span class="icon solid fa-chart-area"></span>
-					<h1><span style="color: #83d3c9;"><b>Coffee Shop</b> </span><strong> interaktywny raport Power BI</strong></h1>
-					<p>dotyczący analizy danych sprzedażowych</p>
+					<h1><span style="color: #83d3c9;"><b>Przyczyny odpływu klientów</b> </span><strong> - analiza Python</strong></h1>
+					<p>wykonana przy użyciem Jupyter Notebook</p>
 				</header>
 					
 					<!-- One -->
@@ -56,9 +56,9 @@
 								<div class="content">
 									<section>
 											<h1><b>Opis projektu</b></h1>
-										<p>Projekt polegał na stworzeniu raportu analitycznego w narzędziu Microsoft Power BI. Głównym celem finalnego produktu jest możliwość przeprowadzenia analizy sprzedaży produktów w kontekście różnych czynników. Raport został zbudowany, aby wspierać procesy decyzyjne, dostarczając kluczowych informacji o wynikach sprzedaży, rentowności, liczbie transakcji oraz sezonowości. Cały proces obejmował przygotowanie danych, budowę modelu analitycznego oraz opracowanie finalnych wizualizacji, które umożliwiają interaktywną analizę danych w różnych ujęciach.</p>
+										<p>Zjawisko rezygnacji klientów, stanowi jedno z głównych wyzwań w branży telekomunikacyjnej. Celem tego projektu było przeprowadzenie szczegółowej analizy danych dotyczących klientów, w tym ich cech demograficznych, historii subskrypcji oraz decyzji o rezygnacji z usług. Analiza została zrealizowana w języku Python przy użyciu Jupyter Notebook, z zastosowaniem zaawansowanych technik eksploracji i modelowania danych. Główne założenie projektu stanowiło identyfikację kluczowych czynników, które wpływają na decyzje klientów o rezygnacji, co pozwoliło na wyodrębnienie istotnych wzorców i zrozumienie dynamiki tego zjawiska. Uzyskane wnioski mogą stanowić cenną podstawę do opracowania skutecznych strategii zwiększających lojalność i retencję klientów w branży telekomunikacyjnej.</p>
 
-										<p>Raport składa się z czterech kart: </p>
+										<p>Analiza danych wraz z opisem i kodem Python jest dostępna <a href="https://github.com/KatarzynaTondas/Python-Projects/blob/main/CustomersChurn_analysis.ipynb/"> w repozytorium Github.</a></p>
 										<style>
 											ol {
 												margin: 2; /* Zmniejsza margines wokół listy */
@@ -68,17 +68,19 @@
 												margin-bottom: 5px; /* Zmniejsza odstęp między elementami listy */
 											}
 										</style>
+										<!--
 										<ol>
 											<li> Strona tytułowa - strona wstępna z wprowadzeniem do raportu.</li>
 											<li> Sprzedaż - karta prezentująca główne wskaźniki KPI, trend sprzedaży oraz kosztów w wybranym przez Użytkownika raportu okresie w odniesieniu do marży %. </li>
 											<li> Produkty - karta zawierająca dane szczegółowe dotyczące sprzedaży poszczególnych produktów m.in. według kategorii, top sprzedających się produktów, sprzedaży narastająco w ujęciu MTD oraz YTD, udziału sprzedaży produktów zawierających alergeny. </li>
 											<li> Drzewo dekompozycji - wizaualizacja dynamiczna, umożliwiająca analizę wybranej wielkości: marży, kosztów lub sprzedaży pod kątem nałożonych przez Użytkownika filtrów. </li>
 										</ol>
+									-->
 										<figure>
 											<a href="#" class="image featured" onclick="zoomImage(event)">
-												<img src="images/CoffeShop2.png" alt="Obrazek" />
+												<img src="images/ChurnPaymentMethod.png" alt="Obrazek" />
 											</a>
-											<figcaption class="caption">Rys. 1. Widok karty Sprzedaż z nałożonym filtrem na rok 2023.</figcaption>
+											<figcaption class="caption">Rys. 1. Przykładowa analiza danych przy pomocy Python - metoda płatności za usługi telekomunikacyjne a rezygnacja klientów.</figcaption>
 										</figure>
 										
 										<style>
@@ -90,7 +92,53 @@
 												margin-bottom: 20px;
 											}
 										</style>
+										
+										<h1><b>Opis wykonanych prac</b></h1>
+										<ol>
+											<li> <b>Wczytanie danych i wstępna eksploracja</b> - zestaw danych został załadowany do ramki danych Pandas (Data frame - dwuwymiarowa struktura danych podobna do tabeli w bazie danych lub arkusza kalkulacyjnego Excela). Sprawdzono strukturę danych, w tym ich rozmiar, nazwy kolumn i podstawowe statystyki, aby uzyskać ogólny obraz zestawu danych.</li>
+											<li> <b>Czyszczenie danych i weryfikacja kompletności danych</b> - przeprowadzono wstępne sprawdzenie danych pod kątem brakujących wartości oraz nieprawidłowości danych.</li>
+											<li> <b>Analiza danych</b> - w celu lepszego zrozumienia danych oraz czynników, które mogą mieć znaczenie przy podejmowaniu decyzji o rezygnacji klientów usług, zostały przeprowadzone następujące analizy:
+												<ul>
+													<li>Rozkład klientów - przeanalizowano proporcje klientów, którzy odeszli oraz tych, którzy pozostali, aby zrozumieć ich udział w zestawie danych</li>
+													<li>Dystrybucja płci</li>
+													<li>Preferencje dotyczące płatności a rezygnacje klientów</li>
+													<li>Dystrybucja stażu - przeanalizowano, czy długość korzystania z usług wpływa na rezygnację klientów</li>
+													<li>Rodzaj usługi internetowych, z których korzystają klienci</li>
+													<li>Rodzaje umów klientów a rezygnacja klientów</li>
+													<li>Wysokość opłat a rezygnacja klientów</li>
+													<li>Korzystanie z konkretnych usług internetowych oraz telefonicznych w kontekście odpływu klientów</li>
+													</li>
+												</ul>
+												
+											<li><b>Analiza Heatmapy Korelacji</b> - w projekcie przeprowadzono analizę korelacji między różnymi cechami o charaketrze liczbowym, aby zrozumieć zależności między poszczególnymi zmiennymi. Wykorzystano Heatmapę Korelacji do wizualizacji tych zależności, co pozwoliło na łatwe identyfikowanie silnych i słabych korelacji między różnymi atrybutami, takimi jak wysokość opłat, staż klientów. Do obliczeń użyto korelację Pearsona, która jest wykorzystywana do badania zmiennych liczowych o rozkładzie zbliżonym do rozkładu normalnego. status klientów. Analiza ta może pomóc zrozumieć, które cechy mają największy wpływ na pozostałe, a także dostarczyć wskazówek odnośnie kolejnego kierunku analizy. </li>
+											<section>
+											<figure>
+												<a href="#" class="image featured" onclick="zoomImage(event)">
+													<img src="images/CorrelationHeatmap.png" alt="Obrazek" />
+												</a>
+												<figcaption class="caption">Rys. 2. Heatmapa badania korelacji między zmiennymi.</figcaption>
+											</figure>
+											</section>
+											
 
+											<p><li><b>Analiza Ważności Cech przy użyciu Random Forest </b> - w celu dalszej oceny tego, które cechy mają największy wpływ na decyzję klientów o rezygnacji, przeprowadzono analizę ważności cech z wykorzystaniem algorytmu Random Forest, który jest wykorzystywany w badaniu zarówno cech liczbowych jak i nie liczbowych. 
+												Algorytm umożliwił ocenę, jak poszczególne zmienne wpływają na przewidywanie odejścia klientów, dostarczając cennych informacji o tym, które cechy są najistotniejsze w modelowaniu. Dzięki tej analizie możliwe było zidentyfikowanie kluczowych czynników, które miały największy wpływ na decyzję klienta o rezygnacji.
+												<section>
+													<figure>
+														<a href="#" class="image featured" onclick="zoomImage(event)">
+															<img src="images/RandomForest.png" alt="Obrazek" />
+														</a>
+														<figcaption class="caption">Rys. 3. Wyniki analizy ważności cech z użyciem algorytmu Random Forest.</figcaption>
+													</figure>
+													</section>
+											</li>
+										</ol>
+										<p><b>Język Python</b> to jedno z najpotężniejszych narzędzi w analizie danych, oferujące szeroki zestaw bibliotek takich jak Pandas, NumPy, Scikit-learn czy TensorFlow, które wspierają cały proces analizy danych, modelowania statystycznego oraz uczenia maszynowego. Jego elastyczność pozwala na manipulowanie danymi, czyszczenie ich oraz tworzenie wykresów i raportów. </p>
+											<p>Wykorzystanie <b>Jupyter Notebook</b> w tym kontekście doskonale wspiera ten proces, oferując interaktywne środowisko, które umożliwia łatwe eksperymentowanie z danymi i modelami churn. Dzięki możliwości bieżącego monitorowania wyników, dokumentowania kodu, dodawania wizualizacji oraz iteracyjnego testowania modeli, Jupyter staje się idealnym narzędziem do pracy nad takimi analizami, ułatwiając prezentację wyników w sposób przejrzysty i zrozumiały.</p>
+
+
+
+<!--
 										Jednym z założeń, którym kierowałam się podczas projektowania układu raportu była prezentacja danych w ujęciu od ogółu do szczegółu. Zostało to zrealizowane poprzez budowę trzech kart raportu, a każda z nich umożliwia przeprowadzenie coraz bardziej szczegółowej analizy. Karta <b>Sprzedaż</b> (Rys.1.) została tak zaprojektowana, aby dawać ogólny wgląd w analizę sprzedży, kosztów i marży. 
 										Karta <b>Produkty</b> (Rys. 2.) umożliwia zagłębienie się w dalsze szczegóły wskaźników, które zainteresowały Użytkownika raportu.
 									    Natomiast, <b>drzewo dekompozycji</b> (Rys.3.), umieszczone na ostatniej karcie to dynamiczna i interaktywna wizualizacja, która pozwala na analizę danych w wielu wymiarach. Automatycznie agreguje dane i umożliwia przechodzenie do szczegółów w dowolnej kolejności. 
@@ -164,13 +212,30 @@
     								list-style-type: disc;
 									}
 								</style>
+								-->
 								</div>
 
 						</section>
-
+							
 					<!-- Two -->
 						<section class="wrapper style1 container special">
 							<div class="row">
+								<div class="col-4 col-12-narrower">
+
+									<section>
+										<header>
+											<h3>Raport w Power BI</h3>
+											<a href="CoffeShop.html" class="image featured" style="margin-bottom: 10px;"><img src="images/CoffeShop.png" alt="" /></a>
+										</header>
+										<p>Raport Coffe Shop wykonany w Power BI dotyczący analizy danych sprzedażowych.</p>
+										<footer>
+											<ul class="buttons">
+												<li><a href="CoffeShop.html" class="button small">więcej</a></li>
+											</ul>
+										</footer>
+									</section>
+								</div>
+								
 								<div class="col-4 col-12-narrower">
 
 									<section>
@@ -191,29 +256,13 @@
 
 									<section>
 										<header>
-											<h3>Analiza Python</h3>
-											<a href="AnalizaPython.html" class="image featured" style="margin-bottom: 10px;"><img src="images/AnalizaPython.png" alt="" /></a>
-										</header>
-										<p>Analiza danych dotycząca odpływu klientów wykonana w Jupyter Notebook.</p>
-										<footer>
-											<ul class="buttons">
-												<li><a href="AnalizaPython.html" class="button small">więcej</a></li>
-											</ul>
-										</footer>
-									</section>						
-								</div>
-								
-								<div class="col-4 col-12-narrower">
-
-									<section>
-										<header>
 											<h3>Analiza SQL</h3>
-											<a href="AnalizaSQL.html" class="image featured" style="margin-bottom: 10px;"><img src="images/CovidSQL.png" alt="" /></a>
+											<a href="CoffeShop.html" class="image featured" style="margin-bottom: 10px;"><img src="images/CovidSQL.png" alt="" /></a>
 										</header>
 										<p>Zbiór zapytań SQL utworzonych w celu analizy danych COVID-19.</p>
 										<footer>
 											<ul class="buttons">
-												<li><a href="AnalizaSQL.html" class="button small">więcej</a></li>
+												<li><a href="#" class="button small">więcej</a></li>
 											</ul>
 										</footer>
 									</section>
