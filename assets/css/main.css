@@ -3125,10 +3125,10 @@ ol {
 				-webkit-backface-visibility: hidden;
 				-ms-backface-visibility: hidden;
 				backface-visibility: hidden;
-				-moz-transform: translateX(-275px);
-				-webkit-transform: translateX(-275px);
-				-ms-transform: translateX(-275px);
-				transform: translateX(-275px);
+				-moz-transform: translateX(-375px);
+				-webkit-transform: translateX(-375px);
+				-ms-transform: translateX(-375px);
+				transform: translateX(-375px);
 				-moz-transition: -moz-transform 0.5s ease;
 				-webkit-transition: -webkit-transform 0.5s ease;
 				-ms-transition: -ms-transform 0.5s ease;
@@ -3139,7 +3139,7 @@ ol {
 				overflow-y: auto;
 				position: fixed;
 				top: 0;
-				width: 275px;
+				width: 375px;
 				z-index: 10002;
 				background: #1c2021;
 				color: #fff;
@@ -3147,6 +3147,8 @@ ol {
 				letter-spacing: 0.075em;
 				text-transform: uppercase;
 				padding: 0.25em 0.75em 1em 0.75em;
+				word-wrap: break-word;
+				white-space: normal;
 			}
 
 				#navPanel .link {
