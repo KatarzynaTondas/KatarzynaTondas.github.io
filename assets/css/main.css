@@ -1904,9 +1904,12 @@ input, select, textarea {
 			}
 
 /* Możemy także dodać efekty do figcaption, aby nie był on zasłonięty */
-figcaption {
+figcaption.caption {
     position: relative;
     z-index: 1;
+    font-size: 16px; /* Set the font size as needed */
+    text-align: center; /* Center align the caption */
+    margin-top: 10px; /* Add some space between image and caption */
 }
 
 /* Icon */
@@ -3125,10 +3128,10 @@ ol {
 				-webkit-backface-visibility: hidden;
 				-ms-backface-visibility: hidden;
 				backface-visibility: hidden;
-				-moz-transform: translateX(-375px);
-				-webkit-transform: translateX(-375px);
-				-ms-transform: translateX(-375px);
-				transform: translateX(-375px);
+				-moz-transform: translateX(-325px);
+				-webkit-transform: translateX(-325px);
+				-ms-transform: translateX(-325px);
+				transform: translateX(-325px);
 				-moz-transition: -moz-transform 0.5s ease;
 				-webkit-transition: -webkit-transform 0.5s ease;
 				-ms-transition: -ms-transform 0.5s ease;
@@ -3139,7 +3142,7 @@ ol {
 				overflow-y: auto;
 				position: fixed;
 				top: 0;
-				width: 375px;
+				width: 325px;
 				z-index: 10002;
 				background: #1c2021;
 				color: #fff;
