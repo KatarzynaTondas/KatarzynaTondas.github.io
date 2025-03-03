@@ -87,7 +87,7 @@
 											}
 										</style>
 							
-										<h1><b>Zakres analizy</b></h1>
+										<a><p>➤ <b>Zakres analizy:</b></p> </a>
 										<ol>
 											<li> <b>Eksploracja danych</b> - weryfikacja kompletności i struktury zbioru danych.</li>
 											<li> <b>Wskaźniki śmiertelności</b> - obliczenie odsetka zgonów względem liczby zakażeń, identyfikacja regionów o najwyższej śmiertelności.</li>
@@ -95,7 +95,7 @@
 											<li> <b>Najbardziej dotknięte obszary</b> - identyfikacja państw o najwyższych wskaźnikach zakażeń w stosunku do populacji.</li>
 											<li> <b>Trendy globalne</b> - analiza dziennej liczby nowych przypadków i zgonów, określenie dynamiki pandemii.</li>	
 											<li> <b>Szczepienia</b> - ocena zależności między liczbą zaszczepionych a populacją.</li>
-												
+												<br>
 										<section>
 											<figure>
 												<a href="#" class="image featured" onclick="zoomImage(event)">
@@ -105,10 +105,9 @@
 											</figure>
 											</section>
 											</ol>
-
-											
-											<p>Analiza pozwoliła na lepsze zrozumienie przebiegu pandemii i jej skutków. Identyfikacja obszarów o najwyższych wskaźnikach zakażeń i śmiertelności może umożliwić lepsze ukierunkowanie działań prewencyjnych i polityki zdrowotnej. Z kolei analiza postępu szczepień może dostarczyć informacji kluczowych dla oceny skuteczności kampanii szczepionkowych.</p>
-										<h1><b>Zalety wykorzystania języka SQL w projekcie</b></h1>								
+											<a><p>➤ <b>Analiza danych jako narzędzie wsparcia działań zdrowotnych:</b></p> </a> 										
+											<p>Przeprowadzona analiza pozwoliła na głębsze zrozumienie przebiegu pandemii oraz jej wpływu na społeczeństwo. Dzięki identyfikacji obszarów o najwyższych wskaźnikach zakażeń i śmiertelności, możliwe stało się ukierunkowanie działań prewencyjnych oraz optymalizacja polityki zdrowotnej w regionach najbardziej narażonych. Ponadto, analiza postępu szczepień dostarcza cennych informacji, które mogą stanowić podstawę oceny efektywności kampanii szczepionkowych i pomóc w dalszym doskonaleniu strategii zdrowotnych.</p>
+											<a><p>➤ <b>Zalety wykorzystania języka SQL w projekcie:</b></p> </a>					
 										<ol>
 											<li><b>Efektywne przetwarzanie dużych zbiorów danych</b> – język SQL oraz silnik baz danych są zoptymalizowane pod kątem pracy z dużymi zbiorami danych, co pozwala na szybkie przetwarzanie milionów rekordów, nawet w przypadku globalnych danych o pandemii.</li>
 										
@@ -120,84 +119,9 @@
 										
 											<li><b>Reużywalność zapytań i automatyzacja</b> – zapytania SQL można zapisywać jako widoki (<i>views</i>), procedury składowane lub używać CTE i tabel tymczasowych, co ułatwia ponowną analizę danych i automatyzację raportowania.</li>
 										</ol>
-										
-
-<!--
-										Jednym z założeń, którym kierowałam się podczas projektowania układu raportu była prezentacja danych w ujęciu od ogółu do szczegółu. Zostało to zrealizowane poprzez budowę trzech kart raportu, a każda z nich umożliwia przeprowadzenie coraz bardziej szczegółowej analizy. Karta <b>Sprzedaż</b> (Rys.1.) została tak zaprojektowana, aby dawać ogólny wgląd w analizę sprzedży, kosztów i marży. 
-										Karta <b>Produkty</b> (Rys. 2.) umożliwia zagłębienie się w dalsze szczegóły wskaźników, które zainteresowały Użytkownika raportu.
-									    Natomiast, <b>drzewo dekompozycji</b> (Rys.3.), umieszczone na ostatniej karcie to dynamiczna i interaktywna wizualizacja, która pozwala na analizę danych w wielu wymiarach. Automatycznie agreguje dane i umożliwia przechodzenie do szczegółów w dowolnej kolejności. 
-										Drzewo dekompozycji jest potężnym narzędziem do analizy danych, które może znacząco ułatwić zrozumienie złożonych zestawów danych i podejmowanie decyzji biznesowych. </p>
-										<figure>
-											<a href="#" class="image featured" onclick="zoomImage(event)">
-												<img src="images/CoffeShop3.png" alt="" />
-											</a>
-											<figcaption class="caption">Rys. 2. Widok karty Produkty - umożliwiającej szczegółową analizę danych.</figcaption>
-										</figure>
-										
-										<style>
-											.caption {
-												font-size: 12px; /* Zmienia rozmiar czcionki */
-												color: #555; /* Zmienia kolor tekstu */
-												text-align: center; /* Wyrównuje tekst do środka */
-												margin-top: 1px;  /* Dodaje odstęp powyżej podpisu */
-												margin-bottom: 20px;
-											}
-										</style>
-
-
-												<figure>
-													<a href="#" class="image featured" onclick="zoomImage(event)">
-														<img src="images/CoffeShop4.png" alt="" />
-													</a>
-													<figcaption class="caption">Rys. 3. Prezentacja wizualizacji drzewo dekompozycji.</figcaption>
-												</figure>
-												
-												<style>
-													.caption {
-														font-size: 12px; /* Zmienia rozmiar czcionki */
-														color: #555; /* Zmienia kolor tekstu */
-														text-align: center; /* Wyrównuje tekst do środka */
-														margin-top: 1px;  /* Dodaje odstęp powyżej podpisu */
-														margin-bottom: 20px;
-													}
-												</style>
-									</section>
-									<header>
-										<h1><b>ZALETY BUDOWANIA RAPORTÓW W POWER BI</b></h1>
-										
-									</header>
-									<p>Dynamiczne wizualizacje w Power BI oferują wiele zalet, które mogą znacząco poprawić analizę i prezentację danych. Do najważniejszych z nich można zaliczyć:</p>
-									<style>
-										p {
-											margin-bottom: 20px; /* Zmniejsza odstęp poniżej elementu <p> */
-										}
-									</style>
-
-									<style>
-										ol {
-											margin: 2; /* Zmniejsza margines wokół listy */
-											padding: 2; /* Zmniejsza odstęp wewnętrzny listy */
-										}
-										ol li {
-											margin-bottom: 10px; /* Zmniejsza odstęp między elementami listy */
-										}
-									</style>
-									<ol class="custom-list">
-   									<li>Przejrzystość i efektywność - dzięki zaawansowanym funkcjom analitycznym i możliwości tworzenia interaktywnych raportów, Power BI pomaga w przejrzystej i efektywnej prezentacji danych, co ułatwia podejmowanie decyzji biznesowych.</li>
-    								<li>Integracja z różnymi źródłami danych - Power BI umożliwia integrację danych z różnych źródeł, takich jak bazy danych, pliki Excel, usługi chmurowe czy aplikacje biznesowe, co pozwala na tworzenie kompleksowych i spójnych raportów.</li>
-    								<li>Interaktywność - Użytkownicy mogą wchodzić w interakcje z danymi, filtrując je, sortując i eksplorując różne widoki. To pozwala na głębszą analizę i lepsze zrozumienie danych.</li>
-   									<li>Łatwość porównywania danych - dynamiczne wykresy, pozwalają na szybkie porównanie wartości między różnymi kategoriami oraz analizę trendów w danych.</li>
-									<li>Dobór częstotliwości odświeżania danych - w zależności od potrzeby biznesowej, użytkownik może określić częstotliwość odświeżania danych, co pozwala na dostosowanie analizy do specyficznych wymagań i zapewnia aktualność informacji.</li>
-
-								</ol>
-
-									<style>
-									.custom-list {
-    								list-style-type: disc;
-									}
-								</style>
-								-->
-								</div>
+										<a><p>➤ <b>Źródło danych:</b></p> </a>
+										<p>✧ KAGGLE<a href="https://www.kaggle.com/datasets/tohidkhanbagani/covid-19-deaths-and-vaccinations-dataset/"> dataset</p>
+									</div>
 
 						</section>
 							
