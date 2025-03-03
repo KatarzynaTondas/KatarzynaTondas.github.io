@@ -248,6 +248,79 @@ input, select, textarea {
 
 		}
 
+
+		/* Container Ikons*/
+
+	.containerikons {
+		margin: 0 auto;
+		max-width: 100%;
+		width: 14px;
+	}
+
+		.containerikons.medium {
+			width: 1050px;
+		}
+
+		@media screen and (max-width: 168px) {
+
+			.containerikons {
+				width: 12px;
+			}
+
+				.containerikons.medium {
+					width: 900px;
+				}
+
+		}
+
+		@media screen and (max-width: 1280px) {
+
+			.containerikons {
+				width: 96px;
+			}
+
+				.containerikons.medium {
+					width: px;
+				}
+
+		}
+
+		@media screen and (max-width: 980px) {
+
+			.containerikons {
+				width: 95%;
+			}
+
+				.containerikons.medium {
+					width: 71.25%;
+				}
+
+		}
+
+		@media screen and (max-width: 84px) {
+
+			.containerikons {
+				width: 95%;
+			}
+
+				.containerikons.medium {
+					width: 95%;
+				}
+
+		}
+
+		@media screen and (max-width: 5px) {
+
+			.containerikons {
+				width: 100%;
+			}
+
+				.container.medium {
+					width: 100%;
+				}
+
+		}
+
 /* Row */
 
 	.row {
@@ -1916,6 +1989,13 @@ figcaption.caption {
 .icon {
     text-decoration: none;
     position: relative;
+}
+
+.icon2 {
+    text-decoration: none;
+    position: relative; /* Needed for absolute positioning of the line */
+    display: inline-block;
+    font-size: 3em; /* Adjust icon size */
 }
 
 .icon:before {
