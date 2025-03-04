@@ -169,22 +169,4 @@ $(document).ready(function () {
 		}
 	}
 
-	document.addEventListener("DOMContentLoaded", function () {
-		var navPanel = document.getElementById("navPanel");
-		var navLinks = navPanel.querySelectorAll("nav a");
-	
-		// Zmienna do przechowywania maksymalnej szerokości
-		var maxWidth = 0;
-	
-		// Sprawdzamy szerokość każdego linku w menu
-		navLinks.forEach(function(link) {
-			var linkWidth = link.offsetWidth;
-			if (linkWidth > maxWidth) {
-				maxWidth = linkWidth;
-			}
-		});
-	
-		// Dodajemy padding i ustawiamy szerokość na podstawie najdłuższego linku
-		navPanel.style.width = (maxWidth + 40) + "px";  // 40px dla paddingu
-	});
 	
