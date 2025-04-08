@@ -46,8 +46,8 @@
 
 				<header class="special container">
 					<span class="icon solid fa-chart-area"></span>
-					<h1><span style="color: #83d3c9;"><b>Coffee Shop</b> </span><strong> interaktywny raport Power BI</strong></h1>
-					<p>dotyczący analizy danych sprzedażowych</p>
+					<h1><span style="color: #83d3c9;"><b>Sales analysis</b> </span><strong> interaktywny raport Power BI</strong></h1>
+					<p>dotyczący analizy danych sprzedażowych oraz analizy preferencji klientów</p>
 				</header>
 					
 					<!-- One -->
@@ -57,17 +57,20 @@
 								<div class="content">
 									<section>
 											<h1><b>Opis projektu</b></h1>
-										<p>Projekt polegał na stworzeniu raportu analitycznego w narzędziu Microsoft Power BI. Głównym celem finalnego produktu jest możliwość przeprowadzenia analizy sprzedaży produktów w kontekście różnych czynników. Raport został zbudowany, aby wspierać procesy decyzyjne, dostarczając kluczowych informacji o wynikach sprzedaży, rentowności, liczbie transakcji oraz sezonowości. Cały proces obejmował przygotowanie danych, budowę modelu analitycznego oraz opracowanie finalnych wizualizacji, które umożliwiają interaktywną analizę danych w różnych ujęciach.</p>
-										<p>✧ Plik Power BI w formacie PBIX oraz dokumentacja zawierająca opis struktury i modelu danych, a także wyszczególnienie miar w języku DAX jest dostępny <a href="https://github.com/KatarzynaTondas/CoffeShopAnalysis-portfolio-Power-BI/"> w repozytorium Github.</a></p>
+										<p>Celem projektu było stworzenie interaktywnego raportu w Power BI służącego do analizy danych sprzedażowych firmy. Dane źródłowe obejmują informacje o transakcjach, produktach, klientach, sklepach oraz budżecie. Raport ma wspierać menedżerów w podejmowaniu decyzji poprzez: prezentację kluczowych wskaźników (KPI) dotyczących sprzedaży, kosztów i ilości, umożliwienie analizy danych z różnych perspektyw (czasowej, geograficznej, demograficznej), porównanie wyników rzeczywistych z planowanymi, identyfikację trendów i odchyleń (w tym analiza YoY), eksplorację danych przy użyciu drzewa dekompozycji.
+
+										</p>
+										<p>✧ Plik Power BI w formacie PBIX oraz dokumentacja zawierająca opis struktury i modelu danych, a także wyszczególnienie miar w języku DAX jest dostępny <a href="https://github.com/KatarzynaTondas/SalesAnalysis-portfolio-Power-BI.git"> w repozytorium Github.</a></p>
 										<p></p>
 										<br>
 										<a><p>➤ <b>Zastosowane technnologie:</b></p> </a>
 										<p text-indent: 20px;>✧ <b>Power Query</b> - importowanie, przetwarzanie, przygotowanie danych do wizualizacji.<p>
 										<p text-indent: 20px;>✧ <b>DAX</b> - wykorzystywany do obliczania wskaźników, miar oraz tworzenia tabel.<p></p>
 										<p text-indent: 20px;>✧ <b>Power BI</b> - wizualizacja danych i tworzenie interaktywnych pulpitów nawigacyjnych.<p></p>
+										<p text-indent: 20px;>✧ <b>Python</b> - stworzenie kodu do generowania przykładowych danych.<p></p>
 										<br>
 										<a><p>➤ <b>Opis raportu:</b></p> </a>
-										<p>Raport składa się z czterech kart: </p>
+										<p>Raport składa się z trzech kart: </p>
 										<style>
 											ol {
 												margin: 2; /* Zmniejsza margines wokół listy */
@@ -78,16 +81,15 @@
 											}
 										</style>
 										<ol>
-											<li> <b>Strona tytułowa</b> - strona wstępna z wprowadzeniem do raportu.</li>
-											<li> <b>Sprzedaż</b> - karta prezentująca główne wskaźniki KPI, trend sprzedaży oraz kosztów w wybranym przez Użytkownika raportu okresie w odniesieniu do marży %. </li>
-											<li> <b>Produkty</b> - karta zawierająca dane szczegółowe dotyczące sprzedaży oraz kosztów poszczególnych produktów m.in. według kategorii, top sprzedających się produktów, sprzedaży narastająco w ujęciu MTD oraz YTD, udziału sprzedaży produktów zawierających alergeny. </li>
-											<li> <b>Drzewo dekompozycji</b> - wizaualizacja dynamiczna, umożliwiająca analizę wybranej wielkości: marży, kosztów lub sprzedaży pod kątem nałożonych przez Użytkownika filtrów. </li>
+											<li> <b>Sales Overview</b> - zawiera kluczowe KPI takie jak: sprzedaż, koszty i ilość sprzedanych produktów. Dodatkowo umożliwia analizę wartości sprzedaży względem planu, subkategorii oraz trendów w czasie poprzez wykres liniowy.</li>
+											<li> <b>Customers</b> - karta poświęcona analizie danych o klientach. Przedstawia ilość oraz wartość sprzedaży z podziałem na miasto pochodzenia oraz grupy wiekowe klientów. </li>
+											<li> <b>Decomposition Tree</b> - wykorzystywana do szczegółowej analizy miar takich jak sprzedaż, ilość i koszty w ujęciu hierarchicznym.</li>
 										</ol>
 										<figure>
 											<a href="#" class="image featured" onclick="zoomImage(event)">
-												<img src="images/CoffeShop2.png" alt="Obrazek" />
+												<img src="images/sales.png" alt="Obrazek" />
 											</a>
-											<figcaption class="caption">Rys. 1. Widok karty Sprzedaż z nałożonym filtrem na rok 2023.</figcaption>
+											<figcaption class="caption">Rys. 1. Widok karty Sales Overwiev.</figcaption>
 										</figure>
 										
 										<style>
@@ -95,20 +97,21 @@
 												font-size: 12px; /* Zmienia rozmiar czcionki */
 												color: #555; /* Zmienia kolor tekstu */
 												text-align: center; /* Wyrównuje tekst do środka */
-												margin-top: 1px;  /* Dodaje odstęp powyżej podpisu */
+												margin-top: 20px;  /* Dodaje odstęp powyżej podpisu */
 												margin-bottom: 20px;
 											}
 										</style>
-										<a><p>➤ <b>Zasada "od ogółu do szczegółu":</b></p> </a>
-										Jednym z założeń, którym kierowałam się podczas projektowania układu raportu była prezentacja danych w ujęciu od ogółu do szczegółu. Zostało to zrealizowane poprzez budowę trzech kart raportu, a każda z nich umożliwia przeprowadzenie coraz bardziej szczegółowej analizy. Karta <b>Sprzedaż</b> (Rys.1.) została tak zaprojektowana, aby dawać ogólny wgląd w analizę sprzedży, kosztów i marży. 
-										Karta <b>Produkty</b> (Rys. 2.) umożliwia zagłębienie się w dalsze szczegóły wskaźników, które zainteresowały Użytkownika raportu.
-									    Natomiast, <b>drzewo dekompozycji</b> (Rys.3.), umieszczone na ostatniej karcie to dynamiczna i interaktywna wizualizacja, która pozwala na analizę danych w wielu wymiarach. Automatycznie agreguje dane i umożliwia przechodzenie do szczegółów w dowolnej kolejności. 
-										Drzewo dekompozycji jest potężnym narzędziem do analizy danych, które może znacząco ułatwić zrozumienie złożonych zestawów danych i podejmowanie decyzji biznesowych. </p>
+										<a><p>➤ <b>Analiza danych klientów</b></p> </a>
+										Jednym z założeń, którym kierowałam się podczas projektowania układu raportu była możliwość analizy danych sprzedażowych w kontekście danych klientów.  
+										Jednym z założeń, którym kierowałam się podczas projektowania układu raportu, była możliwość szczegółowej analizy danych sprzedażowych w kontekście danych klientów, co miało na celu uzyskanie pełniejszego obrazu wydajności sprzedaży w odniesieniu do różnych grup klientów. W ramach tego założenia, zakładałam możliwość analizowania zarówno ilości, jak i wartości sprzedaży, z podziałem na różne grupy klientów, takie jak miejsce zamieszkania (miasto) czy grupa wiekowa. Taki podział umożliwia szczegółowe zrozumienie, jak różne segmenty klientów przyczyniają się do wyników sprzedaży, co jest kluczowe dla lepszego dopasowania strategii marketingowych oraz działań sprzedażowych.
+										<p></p>
+
+
 										<figure>
 											<a href="#" class="image featured" onclick="zoomImage(event)">
-												<img src="images/CoffeShop3.png" alt="" />
+												<img src="images/Customers.png" alt="" />
 											</a>
-											<figcaption class="caption">Rys. 2. Widok karty Produkty - umożliwiającej szczegółową analizę danych.</figcaption>
+											<figcaption class="caption">Rys. 2. Widok karty Customers - umożliwiającej szczegółową analizę danych w kontekście danych klientów.</figcaption>
 										</figure>
 										
 										<style>
@@ -116,15 +119,18 @@
 												font-size: 12px; /* Zmienia rozmiar czcionki */
 												color: #555; /* Zmienia kolor tekstu */
 												text-align: center; /* Wyrównuje tekst do środka */
-												margin-top: 1px;  /* Dodaje odstęp powyżej podpisu */
+												margin-top: 20px;  /* Dodaje odstęp powyżej podpisu */
 												margin-bottom: 20px;
 											}
 										</style>
 
+										<a><p>➤ <b>Drzewo dekompozycji</b></p> </a>
+									    Drzewo dekompozycji (Rys.3.), umieszczone na ostatniej karcie to dynamiczna i interaktywna wizualizacja, która pozwala na analizę danych w wielu wymiarach. Automatycznie agreguje dane i umożliwia przechodzenie do szczegółów w dowolnej kolejności. 
+										Drzewo dekompozycji jest potężnym narzędziem do analizy danych, które może znacząco ułatwić zrozumienie złożonych zestawów danych i podejmowanie decyzji biznesowych. </p>
 
 												<figure>
 													<a href="#" class="image featured" onclick="zoomImage(event)">
-														<img src="images/CoffeShop4.png" alt="" />
+														<img src="images/DecompositionTree.png" alt="" />
 													</a>
 													<figcaption class="caption">Rys. 3. Prezentacja wizualizacji drzewo dekompozycji.</figcaption>
 												</figure>
@@ -174,7 +180,7 @@
 								</style>
 								</div>
 								<a><p>➤ <b>Źródło danych:</b></p> </a>
-								<p>Projekt został wykonany w ramach kursu:<a href="https://odczarujpowerbi.pl/"> 5-dniowe wyzwanie Power BI z elementami AI</a> a następnie rozbudowany (dane zawierają szerszy okres czasu i dodatkowe dane niż dane źródłowe z kursu).</p>
+								<p>Tabele faktów i wymiarów zostały wygenerowane za pomocą kody Python na podstawie zaprojektowanych założeń. Kod Python jest dostępny <a href="https://github.com/KatarzynaTondas/Python_script-Sample_data.git"> w repozytorium Github.</a> </p>
 							</section>
 
 					<!-- Two -->
