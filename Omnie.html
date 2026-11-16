@@ -1,255 +1,232 @@
-<!DOCTYPE HTML>
-<!--
-	Twenty by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Katarzyna Tondaś - analiza danych</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="pm.title">About me – Katarzyna Tondaś | Data Analyst</title>
+  <meta name="description" content="Data analyst working with SQL, Python, Power BI and Tableau. Skills, tools, training and certificates." data-i18n-attr="content:pm.desc">
+  <meta name="author" content="Katarzyna Tondaś">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#0b1220">
 
-	</head>
-	<body class="right-sidebar is-preload">
-		<div id="page-wrapper">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="About me – Katarzyna Tondaś | Data Analyst" data-i18n-attr="content:pm.title">
+  <meta property="og:description" content="Data analyst working with SQL, Python, Power BI and Tableau. Skills, tools, training and certificates." data-i18n-attr="content:pm.desc">
+  <meta property="og:image" content="images/banner.jpg">
+  <meta property="og:locale" content="en_US">
 
-			<!-- Header -->
-			<header id="header">
-				<h1 id="logo"><a href="index.html">Twenty <span>by HTML5 UP</span></a></h1>
-				<nav id="nav">
-					<ul>
-						<li class="current"><a href="index.html">Strona startowa</a></li>
-						<li><a href="Omnie.html">O mnie</a></li>
-						<li class="submenu has-submenu">
-							<a href="Portfolio.html" class="button primary">Portfolio</a>
-							<ul>
-								<li><a href="SalesAnalysis.html">Sales Analysis - raport Power BI</a></li>
-								<li><a href="CoffeShop.html">Coffe Shop - raport Power BI</a></li>
-								<li><a href="RaportTableau.html">Overview - raport Tableau</a></li>
-								<li><a href="AnalizaPython.html">Opływ klientów - analiza Python</a></li>
-								<li><a href="AnalizaSQL.html">COVID-19 - analiza SQL</a></li>
-							</ul>
-						</li>
-					</ul>
-				</nav>
-			</header>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/portfolio.css">
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="a.skip">Skip to content</a>
 
-			<!-- Main -->
-				<article id="main">
-					<header class="special container">
-						<span class="icon solid fa-chart-area"></span>
-						<h2><span style="color: #83d3c9;"><b>O mnie</b> </span></h2>
-					</header>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="Katarzyna Tondaś – home page" data-i18n-attr="aria-label:a.home">
+        <span class="brand__mark" aria-hidden="true">KT</span>
+        Katarzyna Tondaś
+      </a>
 
-					<!-- One -->
-						<section class="wrapper style4 container">
+      <nav class="nav" id="site-nav" aria-label="Main navigation" data-i18n-attr="aria-label:a.nav">
+        <ul class="nav__list">
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="index.html#projects" data-i18n="nav.projects">Projects</a></li>
+          <li><a href="Omnie.html" aria-current="page" data-i18n="nav.about">About me</a></li>
+          <li><a class="nav__cta" href="index.html#contact" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+      </nav>
 
-							<div class="row gtr-150">
-								<div class="col-8 col-12-narrower">
+      <div class="header-tools">
+        <div class="lang-switch" role="group" aria-label="Language" data-i18n-attr="aria-label:a.lang">
+          <button type="button" class="lang-switch__btn" data-lang="en" lang="en" aria-pressed="true" title="English">EN</button>
+          <button type="button" class="lang-switch__btn" data-lang="pl" lang="pl" aria-pressed="false" title="Polski">PL</button>
+        </div>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          <span class="nav-toggle__bars" aria-hidden="true"></span>
+          <span class="sr-only" data-i18n="a.menu">Menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main id="main">
 
-									<!-- Content -->
-										<div class="content">
-											<section>
-												<header>
-													<a><h1>➤ <b>Praca z danymi:</b></h1> </a>
-												</header>
-												<p>Praca z danymi była w kręgu moich zainteresowań już od czasów studiów w dziedzinie geodezji i kartografii, podczas których poznałam zasady oraz metody przedstawiania danych na mapach, specyfikę wykonywania analiz przestrzennych, pracę z zobazowaniami fotogrametrycznymi oraz danymi pozyskanymi metodami teledetekcyjnymi. Obecnie specjalizuje się w analizie dużych zbiorów danych za pomocą jęzeka SQL oraz Python. Skutecznie współpracuję z zespołami projektowymi z zakresu finansów, kontrolingu oraz spraw osobowych, implementuję rozwiązania BI oraz wykorzystuję narzędzia do wizualizacji danych. Mój cel to nie tylko precyzja i dokładność w analizie danych, ale przede wszystkim tworzenie realnej wartości dla organizacji poprzez odpowiednią pracę z danymi.</p>
-												
-												<a><h1>➤ <b>Wykorzystywane technologie:</b></h1> </a>
-												<p>✧ <b>Python</b> - praca z bibliotekami związanymi z analizą danych (np. pandas, numpy), wizualizacją danych (seaborn, matplotlib) oraz z automatyzacją prac
-												<p>✧ <b>Jupyter Notebook / Google Collab</b> - praca z bibliotekami związanymi z analizą danych (np. pandas, numpy), wizualizacją danych (seaborn, matplotlib) oraz z automatyzacją prac
-												<p>✧ <b>SQL</b> - praca w MS SQL oraz Oracle (CTE, DML, DDL), SQL Server
-												<p>✧ <b>DWH</b> - znajomość specyfiki hurtowni danych
-												<p>✧ <b>Microsoft Power BI</b> - DAX, Power Query, RLS oraz narzędzia DAX Studio, Tabular Editor, Bravo for Power BI, Measure Killer
-												<p>✧ <b>Tableau</b> - zaawansowana analiza danych z wykorzystaniem LOD, praca w Tableau Desktop, Tableau Prep, zarządzanie Tableau Server
-												<p>✧ <b>Power Platform</b> - Power Automate, Power Apps (model-driven apps oraz implementacja Dataverse, canvas apps), Power Pages, AI Builder
-												<p>✧ <b>SSIS</b> - SQL Server Integration Services
-												<p>✧ <b>SSRS</b> - SQL ServerReporting Services
-												<p>✧ <b>SSAS</b> - SQL Server Analysis Services
-												<p>✧ <b>Visual Studio Code</b>
-												<p>✧ <b>MS Excel</b> - tabele przestawne, zaawansowane funkcje, zagnieżdżanie funkcji, VBA for Excel
-												<p>✧ <b>ArcGIS</b> - analizy przestrzenne, klasyfikacja danych teledetekcyjnych, wizualizacja danych na mapach
-												<p>✧ <b>QGis</b> - analizy przestrzenne, wizualizacja danych, korzystanie z wtyczek
-												<p>✧ <b>Canva</b> - projektowanie kart raportów
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="container">
+        <h1 id="page-title" data-i18n="pm.h1">About me</h1>
+        <p class="page-hero__sub" data-i18n="pm.sub">Data analysis, BI solutions and data visualisation.</p>
+      </div>
+    </section>
 
+    <section class="section">
+      <div class="container layout layout--single">
+        <article class="prose">
+          <h2 data-i18n="pm.h.work">Working with data</h2>
+          <p data-i18n="pm.p1">Working with data has been among my interests since my studies in geodesy and cartography, where I learned the principles and methods of presenting data on maps, how spatial analysis works, and how to work with photogrammetric imagery and remote-sensing data. Today I specialise in analysing large datasets with SQL and Python. I work effectively with project teams in finance, controlling and HR, implement BI solutions and use data visualisation tools. My goal is not only precision and accuracy in data analysis but, above all, creating real value for organisations through proper work with data.</p>
+          <p data-i18n="pm.p2">I am certified by Microsoft (Power BI Data Analyst, Power Platform Fundamentals, Fabric Data Engineer) and hold the Claude Certified Associate – Foundations credential. You will find the full list of certificates below.</p>
+        </article>
+      </div>
+    </section>
 
-											
-											
-											</section>
-										</div>
+    <section class="section about" aria-labelledby="skills-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__kicker">Skills</span>
+          <h2 class="section__title" id="skills-title" data-i18n="pm.h.skills">Technologies and tools</h2>
+          <p class="section__desc" data-i18n="pm.skills.desc">The tools I work with, grouped by area.</p>
+        </div>
+        <div class="skills">
+        <div class="skill-card reveal">
+          <h3><i class="fas fa-code" aria-hidden="true"></i> <span data-i18n="pm.g1">Programming and databases</span></h3>
+          <ul>
+            <li><strong>Python</strong><span data-i18n="pm.py">working with data analysis libraries (e.g. pandas, numpy), data visualisation (seaborn, matplotlib) and automation</span></li>
+            <li><strong>Jupyter Notebook / Google Colab</strong><span data-i18n="pm.jup">notebooks for data analysis and visualisation</span></li>
+            <li><strong>SQL</strong><span data-i18n="pm.sql">MS SQL and Oracle (CTE, DML, DDL), SQL Server</span></li>
+            <li><strong>DWH</strong><span data-i18n="pm.dwh">knowledge of data warehouse specifics</span></li>
+          </ul>
+        </div>
+        <div class="skill-card reveal">
+          <h3><i class="fas fa-chart-pie" aria-hidden="true"></i> <span data-i18n="pm.g2">BI and visualisation</span></h3>
+          <ul>
+            <li><strong>Microsoft Power BI</strong><span data-i18n="pm.pbi">DAX, Power Query, RLS and tools: DAX Studio, Tabular Editor, Bravo for Power BI, Measure Killer</span></li>
+            <li><strong>Tableau</strong><span data-i18n="pm.tab">advanced analysis using LOD, Tableau Desktop, Tableau Prep, managing Tableau Server</span></li>
+            <li><strong>Canva</strong><span data-i18n="pm.canva">designing report pages</span></li>
+          </ul>
+        </div>
+        <div class="skill-card reveal">
+          <h3><i class="fas fa-layer-group" aria-hidden="true"></i> <span data-i18n="pm.g3">Microsoft data stack</span></h3>
+          <ul>
+            <li><strong>Power Platform</strong><span data-i18n="pm.pp">Power Automate, Power Apps (model-driven apps and Dataverse implementation, canvas apps), Power Pages, AI Builder</span></li>
+            <li><strong>MS Excel</strong><span data-i18n="pm.xls">pivot tables, advanced and nested functions, VBA for Excel</span></li>
+            <li><strong>SSIS</strong><span>SQL Server Integration Services</span></li>
+            <li><strong>SSRS</strong><span>SQL Server Reporting Services</span></li>
+            <li><strong>SSAS</strong><span>SQL Server Analysis Services</span></li>
+            <li><strong>Visual Studio Code</strong></li>
+          </ul>
+        </div>
+        <div class="skill-card reveal">
+          <h3><i class="fas fa-globe-europe" aria-hidden="true"></i> <span data-i18n="pm.g4">Geospatial analysis</span></h3>
+          <ul>
+            <li><strong>ArcGIS</strong><span data-i18n="pm.arc">spatial analysis, classification of remote-sensing data, visualising data on maps</span></li>
+            <li><strong>QGIS</strong><span data-i18n="pm.qgis">spatial analysis, data visualisation, using plugins</span></li>
+          </ul>
+        </div>
+        </div>
+      </div>
+    </section>
 
-								</div>
-								<div class="col-4 col-12-narrower">
+    <section class="section" aria-labelledby="certs-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__kicker">Certificates</span>
+          <h2 class="section__title" id="certs-title" data-i18n="pm.h.certs">Training and certificates</h2>
+          <p class="section__desc" data-i18n="pm.certs.desc">Click a certificate to enlarge it.</p>
+        </div>
+        <div class="certs">
+        <article class="cert reveal cert--cream">
+          <a class="shot__link" href="images/Claude_Foundations.png"><img src="images/Claude_Foundations.png" width="456" height="314" loading="lazy" decoding="async" alt="Claude Certified Associate - Foundations"></a>
+          <div class="cert__body">
+            <h3 class="cert__title">Claude Certified Associate - Foundations</h3>
+            <p class="cert__meta">Anthropic</p>
+          </div>
+        </article>
+        <article class="cert reveal">
+          <a class="shot__link" href="images/PL_300.jpg"><img src="images/PL_300.jpg" width="809" height="847" loading="lazy" decoding="async" alt="Microsoft Certified: Fabric Data Engineer Associate"></a>
+          <div class="cert__body">
+            <h3 class="cert__title">Microsoft Certified: Fabric Data Engineer Associate</h3>
+            <p class="cert__meta">Microsoft</p>
+          </div>
+        </article>
+        <article class="cert reveal">
+          <a class="shot__link" href="images/PL_300.jpg"><img src="images/PL_300.jpg" width="809" height="847" loading="lazy" decoding="async" alt="Microsoft Certified: Power BI Data Analyst Associate"></a>
+          <div class="cert__body">
+            <h3 class="cert__title">Microsoft Certified: Power BI Data Analyst Associate</h3>
+            <p class="cert__meta">Microsoft</p>
+          </div>
+        </article>
+        <article class="cert reveal">
+          <a class="shot__link" href="images/PL_900.jpg"><img src="images/PL_900.jpg" width="945" height="959" loading="lazy" decoding="async" alt="Microsoft Certified: Power Platform Fundamentals"></a>
+          <div class="cert__body">
+            <h3 class="cert__title">Microsoft Certified: Power Platform Fundamentals</h3>
+            <p class="cert__meta">Microsoft</p>
+          </div>
+        </article>
+        <article class="cert reveal">
+          <a class="shot__link" href="images/AIDEAS.jpg"><img src="images/AIDEAS.jpg" width="1414" height="2000" loading="lazy" decoding="async" alt="Artificial Intelligence &amp; Machine Learning (Including Big Data)"></a>
+          <div class="cert__body">
+            <h3 class="cert__title">Artificial Intelligence &amp; Machine Learning (Including Big Data)</h3>
+            <p class="cert__meta">EIT Deep Tech Talent</p>
+          </div>
+        </article>
+        <article class="cert reveal">
+          <a class="shot__link" href="images/WyzwaniePowerBI_AI.jpeg"><img src="images/WyzwaniePowerBI_AI.jpeg" width="798" height="565" loading="lazy" decoding="async" alt="Power BI and AI"></a>
+          <div class="cert__body">
+            <h3 class="cert__title" data-i18n="pm.c4.title">Power BI and AI</h3>
+            <p class="cert__meta">United Latino Students Association</p>
+          </div>
+        </article>
+        <article class="cert reveal">
+          <a class="shot__link" href="images/Altkom.png"><img src="images/Altkom.png" width="800" height="555" loading="lazy" decoding="async" alt="PL-300: Microsoft Power BI Data Analyst"></a>
+          <div class="cert__body">
+            <h3 class="cert__title">PL-300: Microsoft Power BI Data Analyst</h3>
+            <p class="cert__meta">Altkom Akademia</p>
+          </div>
+        </article>
+        <article class="cert reveal">
+          <a class="shot__link" href="images/Udemy.png"><img src="images/Udemy.png" width="767" height="553" loading="lazy" decoding="async" alt="Financial Reporting in Power BI"></a>
+          <div class="cert__body">
+            <h3 class="cert__title">Financial Reporting in Power BI</h3>
+            <p class="cert__meta">Udemy</p>
+          </div>
+        </article>
+        <article class="cert reveal">
+          <a class="shot__link" href="images/SQL_cert.png"><img src="images/SQL_cert.png" width="800" height="566" loading="lazy" decoding="async" alt="SQL language"></a>
+          <div class="cert__body">
+            <h3 class="cert__title">SQL language</h3>
+            <p class="cert__meta">Expose Sp. z o.o.</p>
+          </div>
+        </article>
+        <article class="cert reveal">
+          <a class="shot__link" href="images/Excel_cert.png"><img src="images/Excel_cert.png" width="800" height="566" loading="lazy" decoding="async" alt="Master of Excel"></a>
+          <div class="cert__body">
+            <h3 class="cert__title">Master of Excel</h3>
+            <p class="cert__meta">Expose Sp. z o.o.</p>
+          </div>
+        </article>
+        </div>
+      </div>
+    </section>
 
-									<!-- Sidebar -->
-										<div class="sidebar">
-											<h1><span style="color: #F2B69D;"><b>➤ Szkolenia i certyfikaty</b> </span></h1>
-											<section>
-													<p>◆  Microsoft Certified: Power BI Data Analyst Associate </p>
-													<figure>
-														<a href="#" class="image featured" onclick="zoomImage(event)">
-															<img src="images/PL_300.jpg" alt="Obrazek" />
-														</a>
-													</figure>
-											</section>
+    <section class="section about contact" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <h2 class="section__title" id="cta-title" data-i18n="pm.cta.title">Data is the currency of the future</h2>
+          <p class="section__desc" data-i18n="pm.cta.desc">Take a look at my projects.</p>
+        </div>
+        <div class="contact__actions reveal">
+          <a class="btn btn--primary" href="index.html#projects"><span data-i18n="pm.cta.btn">My portfolio</span> <i class="fas fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </section>
 
-											<section>
-													<p>◆  Microsoft Certified: Power Platform Fundamentals </p>
-													<figure>
-														<a href="#" class="image featured" onclick="zoomImage(event)">
-															<img src="images/PL_900.jpg" alt="Obrazek" />
-														</a>
-													</figure>
-											</section>
-											
-											<section>
-													<p>◆  Artificial Intelligence & Machine Learning (Including Big Data) - data uzyskania: maj 2025, EIT Deep Tech Talent</p>
-													<figure>
-														<a href="#" class="image featured" onclick="zoomImage(event)">
-															<img src="images/AIDEAS.jpg" alt="Obrazek" />
-														</a>
-													</figure>
-													<!--
-												<footer>
-													<ul class="buttons">
-														<li><a href="#" class="button small">Learn More</a></li> 
-													</ul>
-												</footer>
-												-->
-											</section>
-											
-											<section>
-													<p>◆  Power BI i AI - data uzyskania: luty 2025, United Latino Students Association</p>
-													<figure>
-														<a href="#" class="image featured" onclick="zoomImage(event)">
-															<img src="images/WyzwaniePowerBI_AI.jpeg" alt="Obrazek" />
-														</a>
-													</figure>
-													<!--
-												<footer>
-													<ul class="buttons">
-														<li><a href="#" class="button small">Learn More</a></li> 
-													</ul>
-												</footer>
-												-->
-											</section>
+  </main>
 
+  <footer class="site-footer">
+    <div class="container">
+      <span>&copy; 2026 Katarzyna Tondaś</span>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/katarzynatondas/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/KatarzynaTondas/" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="#contact" data-user="tondas.katarzyna" data-domain="gmail.com" data-i18n="contact.mail">Write to me</a>
+        <a href="#main"><span data-i18n="footer.top">Back to top</span> <i class="fas fa-arrow-up" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </footer>
 
-													<section>
-															<p>◆  PL-300: Microsoft Power BI Data Analyst - data uzyskania: luty 2024, Altkom Akademia</p>
-															<figure>
-																<a href="#" class="image featured" onclick="zoomImage(event)">
-																	<img src="images/Altkom.png" alt="Obrazek" />
-																</a>
-															</figure>
-													</section>
-
-													<section>
-														<p>◆ Financial Reporting in Power BI - data uzyskania: luty 2022, Udemy</p>
-														<figure>
-															<a href="#" class="image featured" onclick="zoomImage(event)">
-																<img src="images/Udemy.png" alt="Obrazek" />
-															</a>
-														</figure>
-														<!--
-													<footer>
-														<ul class="buttons">
-															<li><a href="#" class="button small">Learn More</a></li> 
-														</ul>
-													</footer>
-													-->
-												</section>
-
-												<section>
-													<p>◆ SQL language - data uzyskania: październik 2019, Expose Sp. z o.o.</p>
-													<figure>
-														<a href="#" class="image featured" onclick="zoomImage(event)">
-															<img src="images/SQL_cert.png" alt="Obrazek" />
-														</a>
-													</figure>
-													<!--
-												<footer>
-													<ul class="buttons">
-														<li><a href="#" class="button small">Learn More</a></li> 
-													</ul>
-												</footer>
-												-->
-											</section>
-
-										<section>
-											<p>◆ Master of Excel - data uzyskania: wrzesień 2019, Expose Sp. z o.o.</p>
-											<figure>
-												<a href="#" class="image featured" onclick="zoomImage(event)">
-													<img src="images/Excel_cert.png" alt="Obrazek" />
-												</a>
-											</figure>
-											<!--
-										<footer>
-											<ul class="buttons">
-												<li><a href="#" class="button small">Learn More</a></li> 
-											</ul>
-										</footer>
-										-->
-									</section>
-								</div>
-
-								</div>
-							</div>
-						</section>
-
-					<!-- Two -->
-					<section class="wrapper style2 container special-alt">
-						<div class="row gtr-50">
-							<div class="col-8 col-12-narrower">
-
-								<header>
-									<h1><strong>Dane są walutą przyszłości. </strong> a ich prawidłowa analiza to klucz do odkrywania nowych możliwości i podejmowania trafnych decyzji.</h1>
-								</header>
-								<p>Zapraszam do zapoznania się z moimi projektami.</p>
-								<footer>
-									<ul class="buttons">
-										<li><a href="Portfolio.html" class="button">Moje portfolio</a></li>
-									</ul>
-								</footer>
-
-							</div>
-
-
-				</article>
-
-			<!-- Footer -->
-			<footer id="footer">
-
-				<ul class="icons">
-					<!--<li><a href="#" class="icon brands circle fa-twitter"><span class="label">Twitter</span></a></li>-->
-					<!--<li><a href="#" class="icon brands circle fa-facebook-f"><span class="label">Facebook</span></a></li>-->
-					<li><a href="mailto:tondas.katarzyna@gmail.com" class="icon brands circle fa-google"><span class="label">Gmail</span></a></li>
-					<li><a href="https://www.linkedin.com/in/katarzynatondas/" class="icon brands circle fa-linkedin"><span class="label">Linkedin</span></a></li>
-					<li><a href="https://github.com/KatarzynaTondas/" class="icon brands circle fa-github"><span class="label">Github</span></a></li>
-					<!--<li><a href="#" class="icon brands circle fa-dribbble"><span class="label">Dribbble</span></a></li>-->
-				</ul>
-
-				<ul class="copyright" style="margin: 20px; padding: 20px;">
-					<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a> - The original work has been modified</li>
-				</ul>
-
-			</footer>
-
-	</div>
-
-	<!-- Scripts -->
-
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.dropotron.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/jquery.scrollgress.min.js"></script>
-	<script src="assets/js/jquery.scrollex.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
+  <script src="assets/js/translations.js"></script>
+  <script src="assets/js/portfolio.js"></script>
 </body>
 </html>

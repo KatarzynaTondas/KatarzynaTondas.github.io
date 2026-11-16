@@ -1,268 +1,164 @@
-<!DOCTYPE HTML>
-<!--
-	Twenty by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Katarzyna Tondaś - analiza danych</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="pt.title">Overview Dashboard – Tableau report | Katarzyna Tondaś</title>
+  <meta name="description" content="A one-page Tableau report presenting the main sales indicators: sales, profit and number of orders." data-i18n-attr="content:pt.desc">
+  <meta name="author" content="Katarzyna Tondaś">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#0b1220">
 
-		
-	</head>
-	<body class="no-sidebar is-preload">
-		<div id="page-wrapper">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Overview Dashboard – Tableau report | Katarzyna Tondaś" data-i18n-attr="content:pt.title">
+  <meta property="og:description" content="A one-page Tableau report presenting the main sales indicators: sales, profit and number of orders." data-i18n-attr="content:pt.desc">
+  <meta property="og:image" content="images/RaportTableau.png">
+  <meta property="og:locale" content="en_US">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/portfolio.css">
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="a.skip">Skip to content</a>
 
-			<!-- Header -->
-			<header id="header">
-				<h1 id="logo"><a href="index.html">Twenty <span>by HTML5 UP</span></a></h1>
-				<nav id="nav">
-					<ul>
-						<li class="current"><a href="index.html">Strona startowa</a></li>
-						<li><a href="Omnie.html">O mnie</a></li>
-						<li class="submenu has-submenu">
-							<a href="Portfolio.html" class="button primary">Portfolio</a>
-							<ul>
-								<li><a href="SalesAnalysis.html">Sales Analysis - raport Power BI</a></li>
-								<li><a href="CoffeShop.html">Coffe Shop - raport Power BI</a></li>
-								<li><a href="RaportTableau.html">Overview - raport Tableau</a></li>
-								<li><a href="AnalizaPython.html">Opływ klientów - analiza Python</a></li>
-								<li><a href="AnalizaSQL.html">COVID-19 - analiza SQL</a></li>
-							</ul>
-						</li>
-					</ul>
-				</nav>
-			</header>
-			
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="Katarzyna Tondaś – home page" data-i18n-attr="aria-label:a.home">
+        <span class="brand__mark" aria-hidden="true">KT</span>
+        Katarzyna Tondaś
+      </a>
 
-			<!-- Main -->
+      <nav class="nav" id="site-nav" aria-label="Main navigation" data-i18n-attr="aria-label:a.nav">
+        <ul class="nav__list">
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="index.html#projects" aria-current="true" data-i18n="nav.projects">Projects</a></li>
+          <li><a href="Omnie.html" data-i18n="nav.about">About me</a></li>
+          <li><a class="nav__cta" href="index.html#contact" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+      </nav>
 
-			<article id="main">
+      <div class="header-tools">
+        <div class="lang-switch" role="group" aria-label="Language" data-i18n-attr="aria-label:a.lang">
+          <button type="button" class="lang-switch__btn" data-lang="en" lang="en" aria-pressed="true" title="English">EN</button>
+          <button type="button" class="lang-switch__btn" data-lang="pl" lang="pl" aria-pressed="false" title="Polski">PL</button>
+        </div>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          <span class="nav-toggle__bars" aria-hidden="true"></span>
+          <span class="sr-only" data-i18n="a.menu">Menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main id="main">
 
-				<header class="special container">
-					<span class="icon solid fa-chart-area"></span>
-					<h1><span style="color: #83d3c9;"><b>Overview Dashboard</b> </span><strong> - jednostronnicowy rapot Tableau</strong></h1>
-					<p>prezentujący główne wskaźniki sprzedażowe</p>
-				</header>
-					
-					<!-- One -->
-						<section class="wrapper style4 container">
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="container">
+        <a class="back-link" href="index.html#projects"><i class="fas fa-arrow-left" aria-hidden="true"></i> <span data-i18n="c.back">All projects</span></a>
+        <span class="page-hero__kicker" data-i18n="pt.kicker">Tableau report</span>
+        <h1 id="page-title">Overview Dashboard</h1>
+        <p class="page-hero__sub" data-i18n="pt.sub">A one-page report presenting the key sales indicators.</p>
+        <ul class="chips" aria-label="Technologies" data-i18n-attr="aria-label:a.tech"><li class="chip">Tableau</li></ul>
+      </div>
+    </section>
 
-							<!-- Content -->
-								<div class="content">
-									<section>
-											<h1><b>Opis projektu</b></h1>
-										<p>Projekt polegał na stworzeniu jednostronnicowego raportu prezentującego główne wskaźniki danych sprzedażowych. Został wykonany w narzędziu Tableau od Salesforce Inc. Raport koncentruje się na kluczowych wskaźnikach takich jak sprzedaż, zysk i liczba zamówień, eliminując zbędne szczegóły, aby ułatwić szybkie podejmowanie decyzji. Raport umożliwia interaktywne filtrowaie danych na wizualizacjach za pomoc panelu filtrów oraz poprzez wybieranie odpowiednich elementów na wykresach.</p>
+    <section class="section">
+      <div class="container layout">
+        <article class="prose">
+          <h2 data-i18n="c.h.desc">Project description</h2>
+          <p data-i18n="pt.p1">The project was to build a one-page report presenting the main sales indicators. It was built in Tableau by Salesforce, Inc. The report focuses on key indicators such as sales, profit and number of orders, leaving out unnecessary detail to make quick decisions easier. It allows interactive filtering of the visuals with the filter panel and by selecting elements on the charts.</p>
+          <p data-i18n="pt.p2">The interactive report is available <a href="https://public.tableau.com/app/profile/katarzyna.tonda./viz/SampleSuperstore_17408250946510/Dashboard12/">here</a>.</p>
+          <figure class="shot">
+  <a class="shot__link" href="images/RaportTableau.png"><img src="images/RaportTableau.png" width="1504" height="846" loading="lazy" decoding="async" alt="Overview dashboard in Tableau" data-i18n-attr="alt:pt.fig.alt"><span class="shot__zoom" aria-hidden="true"><i class="fas fa-search-plus"></i></span></a>
+  <figcaption data-i18n="pt.fig.cap">Fig. 1. The interactive Tableau report.</figcaption>
+</figure>
 
-										<p> ✧ Interaktywny raport jest dostępny <a href="https://public.tableau.com/app/profile/katarzyna.tonda./viz/SampleSuperstore_17408250946510/Dashboard12/">pod linkiem.</a></p>
-										<style>
-											ol {
-												margin: 2; /* Zmniejsza margines wokół listy */
-												padding: 2; /* Zmniejsza odstęp wewnętrzny listy */
-											}
-											ol li {
-												margin-bottom: 5px; /* Zmniejsza odstęp między elementami listy */
-											}
-										</style>
-										<!--
-										<ol>
-											<li> Strona tytułowa - strona wstępna z wprowadzeniem do raportu.</li>
-											<li> Sprzedaż - karta prezentująca główne wskaźniki KPI, trend sprzedaży oraz kosztów w wybranym przez Użytkownika raportu okresie w odniesieniu do marży %. </li>
-											<li> Produkty - karta zawierająca dane szczegółowe dotyczące sprzedaży poszczególnych produktów m.in. według kategorii, top sprzedających się produktów, sprzedaży narastająco w ujęciu MTD oraz YTD, udziału sprzedaży produktów zawierających alergeny. </li>
-											<li> Drzewo dekompozycji - wizaualizacja dynamiczna, umożliwiająca analizę wybranej wielkości: marży, kosztów lub sprzedaży pod kątem nałożonych przez Użytkownika filtrów. </li>
-										</ol>
-									-->
-										<figure>
-											<a href="#" class="image featured" onclick="zoomImage(event)">
-												<img src="images/RaportTableau.png" alt="Obrazek" />
-											</a>
-											<figcaption class="caption">Rys. 1. Prezentacja interaktywnego raportu Tableau.</figcaption>
-										</figure>
-										
-										<style>
-											.caption {
-												font-size: 12px; /* Zmienia rozmiar czcionki */
-												color: #555; /* Zmienia kolor tekstu */
-												text-align: center; /* Wyrównuje tekst do środka */
-												margin-top: 1px;  /* Dodaje odstęp powyżej podpisu */
-												margin-bottom: 20px;
-											}
-										</style>
-										<p>Karta typu Overview może stanowić podstawę do dalszej rozbudowy raportu o dodatkowe wizualizacje np. wzrost sprzedaży w ujęciu miesiąc do miesiąca lub rok do roku, analiza danych sprzedażowych według innych kryteriów, zestawienie tabelaryczne dotyczące statusów oraz szczegółów transakcji. </p>
-										<a><p>➤ <b>Źródło danych:</b></p></a> - oficjalne źródło danych udostępniane przez Salesforce 
+          <h2 data-i18n="pt.h.next">Possible extensions</h2>
+          <p data-i18n="pt.p3">The Overview page can be a base for expanding the report with additional visuals, e.g. sales growth month-over-month or year-over-year, analysis of sales data by other criteria, or a table summarising statuses and transaction details.</p>
 
-<!--
-										Jednym z założeń, którym kierowałam się podczas projektowania układu raportu była prezentacja danych w ujęciu od ogółu do szczegółu. Zostało to zrealizowane poprzez budowę trzech kart raportu, a każda z nich umożliwia przeprowadzenie coraz bardziej szczegółowej analizy. Karta <b>Sprzedaż</b> (Rys.1.) została tak zaprojektowana, aby dawać ogólny wgląd w analizę sprzedży, kosztów i marży. 
-										Karta <b>Produkty</b> (Rys. 2.) umożliwia zagłębienie się w dalsze szczegóły wskaźników, które zainteresowały Użytkownika raportu.
-									    Natomiast, <b>drzewo dekompozycji</b> (Rys.3.), umieszczone na ostatniej karcie to dynamiczna i interaktywna wizualizacja, która pozwala na analizę danych w wielu wymiarach. Automatycznie agreguje dane i umożliwia przechodzenie do szczegółów w dowolnej kolejności. 
-										Drzewo dekompozycji jest potężnym narzędziem do analizy danych, które może znacząco ułatwić zrozumienie złożonych zestawów danych i podejmowanie decyzji biznesowych. </p>
-										<figure>
-											<a href="#" class="image featured" onclick="zoomImage(event)">
-												<img src="images/CoffeShop3.png" alt="" />
-											</a>
-											<figcaption class="caption">Rys. 2. Widok karty Produkty - umożliwiającej szczegółową analizę danych.</figcaption>
-										</figure>
-										
-										<style>
-											.caption {
-												font-size: 12px; /* Zmienia rozmiar czcionki */
-												color: #555; /* Zmienia kolor tekstu */
-												text-align: center; /* Wyrównuje tekst do środka */
-												margin-top: 1px;  /* Dodaje odstęp powyżej podpisu */
-												margin-bottom: 20px;
-											}
-										</style>
+          <h2 data-i18n="c.h.src">Data source</h2>
+          <p data-i18n="pt.src">The official data source provided by Salesforce.</p>
+        </article>
+      <aside class="aside" aria-labelledby="facts-title">
+        <h2 id="facts-title" data-i18n="c.facts">Project facts</h2>
+        <dl class="facts">
+          <div><dt data-i18n="c.type">Type</dt><dd><span data-i18n="pt.f.type">Interactive dashboard</span></dd></div>
+          <div><dt data-i18n="c.tools">Tools</dt><dd><ul class="chips"><li class="chip">Tableau</li></ul></dd></div>
+          <div><dt data-i18n="c.data">Data</dt><dd><span data-i18n="pt.f.data">Official data provided by Salesforce</span></dd></div>
+        </dl>
+        <a class="btn btn--primary" href="https://public.tableau.com/app/profile/katarzyna.tonda./viz/SampleSuperstore_17408250946510/Dashboard12/" target="_blank" rel="noopener noreferrer"><span data-i18n="pt.open">Open interactive report</span> <i class="fas fa-external-link-alt" aria-hidden="true"></i></a>
+      </aside>
+      </div>
+    </section>
 
+    <section class="section related" aria-labelledby="more-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__kicker">Portfolio</span>
+          <h2 class="section__title" id="more-title" data-i18n="c.more">More projects</h2>
+          <p class="section__desc" data-i18n="c.more.desc">Other reports and analyses from my portfolio.</p>
+        </div>
+        <div class="grid">
+          <article class="card reveal">
+            <div class="card__media">
+              <span class="card__tool">Python</span>
+              <img src="images/AnalizaPython.png" width="1200" height="750" loading="lazy" decoding="async"
+                   alt="Customer churn analysis in Python – chart from Jupyter Notebook" data-i18n-attr="alt:churn.alt">
+              <div class="card__overlay" aria-hidden="true"><span><span data-i18n="proj.view">View project</span> <i class="fas fa-arrow-right"></i></span></div>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title"><a href="AnalizaPython.html" data-i18n="churn.title">Customer churn</a></h3>
+              <p class="card__text" data-i18n="churn.text">Customer churn analysis built in Jupyter Notebook.</p>
+              <ul class="card__tags" aria-label="Project technologies" data-i18n-attr="aria-label:a.ptech"><li class="tag">Python</li><li class="tag">Jupyter</li></ul>
+            </div>
+          </article>
+          <article class="card reveal">
+            <div class="card__media">
+              <span class="card__tool">SQL</span>
+              <img src="images/CovidSQL.png" width="1200" height="750" loading="lazy" decoding="async"
+                   alt="SQL queries for COVID-19 data analysis" data-i18n-attr="alt:covid.alt">
+              <div class="card__overlay" aria-hidden="true"><span><span data-i18n="proj.view">View project</span> <i class="fas fa-arrow-right"></i></span></div>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title"><a href="AnalizaSQL.html" data-i18n="covid.title">COVID-19 in SQL</a></h3>
+              <p class="card__text" data-i18n="covid.text">A set of SQL queries created to analyse COVID-19 data.</p>
+              <ul class="card__tags" aria-label="Project technologies" data-i18n-attr="aria-label:a.ptech"><li class="tag">SQL</li></ul>
+            </div>
+          </article>
+          <article class="card reveal">
+            <div class="card__media">
+              <span class="card__tool">Power BI</span>
+              <img src="images/Customers.png" width="1200" height="750" loading="lazy" decoding="async"
+                   alt="Power BI Sales Analysis report – sales and customer analysis" data-i18n-attr="alt:sales.alt">
+              <div class="card__overlay" aria-hidden="true"><span><span data-i18n="proj.view">View project</span> <i class="fas fa-arrow-right"></i></span></div>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title"><a href="SalesAnalysis.html">Sales Analysis</a></h3>
+              <p class="card__text" data-i18n="sales.text">Interactive report analysing sales data and customer preferences.</p>
+              <ul class="card__tags" aria-label="Project technologies" data-i18n-attr="aria-label:a.ptech"><li class="tag">Power BI</li><li class="tag">DAX</li></ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-												<figure>
-													<a href="#" class="image featured" onclick="zoomImage(event)">
-														<img src="images/CoffeShop4.png" alt="" />
-													</a>
-													<figcaption class="caption">Rys. 3. Prezentacja wizualizacji drzewo dekompozycji.</figcaption>
-												</figure>
-												
-												<style>
-													.caption {
-														font-size: 12px; /* Zmienia rozmiar czcionki */
-														color: #555; /* Zmienia kolor tekstu */
-														text-align: center; /* Wyrównuje tekst do środka */
-														margin-top: 1px;  /* Dodaje odstęp powyżej podpisu */
-														margin-bottom: 20px;
-													}
-												</style>
-									</section>
-									<header>
-										<h1><b>ZALETY BUDOWANIA RAPORTÓW W POWER BI</b></h1>
-										
-									</header>
-									<p>Dynamiczne wizualizacje w Power BI oferują wiele zalet, które mogą znacząco poprawić analizę i prezentację danych. Do najważniejszych z nich można zaliczyć:</p>
-									<style>
-										p {
-											margin-bottom: 20px; /* Zmniejsza odstęp poniżej elementu <p> */
-										}
-									</style>
+  </main>
 
-									<style>
-										ol {
-											margin: 2; /* Zmniejsza margines wokół listy */
-											padding: 2; /* Zmniejsza odstęp wewnętrzny listy */
-										}
-										ol li {
-											margin-bottom: 10px; /* Zmniejsza odstęp między elementami listy */
-										}
-									</style>
-									<ol class="custom-list">
-   									<li>Przejrzystość i efektywność - dzięki zaawansowanym funkcjom analitycznym i możliwości tworzenia interaktywnych raportów, Power BI pomaga w przejrzystej i efektywnej prezentacji danych, co ułatwia podejmowanie decyzji biznesowych.</li>
-    								<li>Integracja z różnymi źródłami danych - Power BI umożliwia integrację danych z różnych źródeł, takich jak bazy danych, pliki Excel, usługi chmurowe czy aplikacje biznesowe, co pozwala na tworzenie kompleksowych i spójnych raportów.</li>
-    								<li>Interaktywność - Użytkownicy mogą wchodzić w interakcje z danymi, filtrując je, sortując i eksplorując różne widoki. To pozwala na głębszą analizę i lepsze zrozumienie danych.</li>
-   									<li>Łatwość porównywania danych - dynamiczne wykresy, pozwalają na szybkie porównanie wartości między różnymi kategoriami oraz analizę trendów w danych.</li>
-									<li>Dobór częstotliwości odświeżania danych - w zależności od potrzeby biznesowej, użytkownik może określić częstotliwość odświeżania danych, co pozwala na dostosowanie analizy do specyficznych wymagań i zapewnia aktualność informacji.</li>
+  <footer class="site-footer">
+    <div class="container">
+      <span>&copy; 2026 Katarzyna Tondaś</span>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/katarzynatondas/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/KatarzynaTondas/" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="#contact" data-user="tondas.katarzyna" data-domain="gmail.com" data-i18n="contact.mail">Write to me</a>
+        <a href="#main"><span data-i18n="footer.top">Back to top</span> <i class="fas fa-arrow-up" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </footer>
 
-								</ol>
-
-									<style>
-									.custom-list {
-    								list-style-type: disc;
-									}
-								</style>
-								-->
-								</div>
-
-						</section>
-							
-					<!-- Two -->
-						<section class="wrapper style1 container special">
-							<div class="row">
-								<div class="col-4 col-12-narrower">
-
-									<section>
-										<header>
-											<h3>Raport w Power BI</h3>
-											<a href="CoffeShop.html" class="image featured" style="margin-bottom: 10px;"><img src="images/CoffeShop.png" alt="" /></a>
-										</header>
-										<p>Raport Coffe Shop wykonany w Power BI dotyczący analizy danych sprzedażowych.</p>
-										<footer>
-											<ul class="buttons">
-												<li><a href="CoffeShop.html" class="button small">więcej</a></li>
-											</ul>
-										</footer>
-									</section>
-								</div>
-								
-								<div class="col-4 col-12-narrower">
-
-									<section>
-										<header>
-											<h3>Analiza Python</h3>
-											<a href="AnalizaPython.html" class="image featured" style="margin-bottom: 10px;"><img src="images/AnalizaPython.png" alt="" /></a>
-										</header>
-										<p>Analiza danych dotycząca odpływu klientów wykonana w Jupyter Notebook.</p>
-										<footer>
-											<ul class="buttons">
-												<li><a href="AnalizaPython.html" class="button small">więcej</a></li>
-											</ul>
-										</footer>
-									</section>						
-								</div>
-								
-								<div class="col-4 col-12-narrower">
-
-									<section>
-										<header>
-											<h3>Analiza SQL</h3>
-											<a href="AnalizaSQL.html" class="image featured" style="margin-bottom: 10px;"><img src="images/CovidSQL.png" alt="" /></a>
-										</header>
-										<p>Zbiór zapytań SQL utworzonych w celu analizy danych COVID-19.</p>
-										<footer>
-											<ul class="buttons">
-												<li><a href="AnalizaSQL.html" class="button small">więcej</a></li>
-											</ul>
-										</footer>
-									</section>
-
-								</div>
-							</div>
-							
-						</section>
-
-						
-				</article>
-
-			<!-- Footer -->
-				<footer id="footer">
-
-					<ul class="icons">
-						<!--<li><a href="#" class="icon brands circle fa-twitter"><span class="label">Twitter</span></a></li>-->
-						<!--<li><a href="#" class="icon brands circle fa-facebook-f"><span class="label">Facebook</span></a></li>-->
-						<li><a href="mailto:tondas.katarzyna@gmail.com" class="icon brands circle fa-google"><span class="label">Gmail</span></a></li>
-						<li><a href="https://www.linkedin.com/in/katarzynatondas/" class="icon brands circle fa-linkedin"><span class="label">Linkedin</span></a></li>
-						<li><a href="https://github.com/KatarzynaTondas/" class="icon brands circle fa-github"><span class="label">Github</span></a></li>
-						<!--<li><a href="#" class="icon brands circle fa-dribbble"><span class="label">Dribbble</span></a></li>-->
-					</ul>
-
-					<ul class="copyright" style="margin: 20px; padding: 20px;">
-						<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-
-				</footer>
-
-		</div>
-
-		<!-- Scripts -->
-
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.dropotron.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
-		<script src="assets/js/jquery.scrollgress.min.js"></script>
-		<script src="assets/js/jquery.scrollex.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
-	</body>
+  <script src="assets/js/translations.js"></script>
+  <script src="assets/js/portfolio.js"></script>
+</body>
 </html>

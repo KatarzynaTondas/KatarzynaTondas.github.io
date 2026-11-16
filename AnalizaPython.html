@@ -1,317 +1,199 @@
-<!DOCTYPE HTML>
-<!--
-	Twenty by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Katarzyna Tondaś - analiza danych</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="pp.title">Customer churn analysis – Python | Katarzyna Tondaś</title>
+  <meta name="description" content="Customer churn analysis in Python (Jupyter Notebook): data exploration, correlation heatmap and Random Forest feature importance." data-i18n-attr="content:pp.desc">
+  <meta name="author" content="Katarzyna Tondaś">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#0b1220">
 
-		
-	</head>
-	<body class="no-sidebar is-preload">
-		<div id="page-wrapper">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Customer churn analysis – Python | Katarzyna Tondaś" data-i18n-attr="content:pp.title">
+  <meta property="og:description" content="Customer churn analysis in Python (Jupyter Notebook): data exploration, correlation heatmap and Random Forest feature importance." data-i18n-attr="content:pp.desc">
+  <meta property="og:image" content="images/AnalizaPython.png">
+  <meta property="og:locale" content="en_US">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/portfolio.css">
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="a.skip">Skip to content</a>
 
-			<!-- Header -->
-			<header id="header">
-				<h1 id="logo"><a href="index.html">Twenty <span>by HTML5 UP</span></a></h1>
-				<nav id="nav">
-					<ul>
-						<li class="current"><a href="index.html">Strona startowa</a></li>
-						<li><a href="Omnie.html">O mnie</a></li>
-						<li class="submenu has-submenu">
-							<a href="Portfolio.html" class="button primary">Portfolio</a>
-							<ul>
-								<li><a href="SalesAnalysis.html">Sales Analysis - raport Power BI</a></li>
-								<li><a href="CoffeShop.html">Coffe Shop - raport Power BI</a></li>
-								<li><a href="RaportTableau.html">Overview - raport Tableau</a></li>
-								<li><a href="AnalizaPython.html">Opływ klientów - analiza Python</a></li>
-								<li><a href="AnalizaSQL.html">COVID-19 - analiza SQL</a></li>
-							</ul>
-						</li>
-					</ul>
-				</nav>
-			</header>
-			
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="Katarzyna Tondaś – home page" data-i18n-attr="aria-label:a.home">
+        <span class="brand__mark" aria-hidden="true">KT</span>
+        Katarzyna Tondaś
+      </a>
 
-			<!-- Main -->
+      <nav class="nav" id="site-nav" aria-label="Main navigation" data-i18n-attr="aria-label:a.nav">
+        <ul class="nav__list">
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="index.html#projects" aria-current="true" data-i18n="nav.projects">Projects</a></li>
+          <li><a href="Omnie.html" data-i18n="nav.about">About me</a></li>
+          <li><a class="nav__cta" href="index.html#contact" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+      </nav>
 
-			<article id="main">
+      <div class="header-tools">
+        <div class="lang-switch" role="group" aria-label="Language" data-i18n-attr="aria-label:a.lang">
+          <button type="button" class="lang-switch__btn" data-lang="en" lang="en" aria-pressed="true" title="English">EN</button>
+          <button type="button" class="lang-switch__btn" data-lang="pl" lang="pl" aria-pressed="false" title="Polski">PL</button>
+        </div>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          <span class="nav-toggle__bars" aria-hidden="true"></span>
+          <span class="sr-only" data-i18n="a.menu">Menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main id="main">
 
-				<header class="special container">
-					<span class="icon solid fa-python"></span>
-					<h1><span style="color: #83d3c9;"><b>Przyczyny odpływu klientów</b> </span><strong> - analiza Python</strong></h1>
-					<p>wykonana z użyciem Jupyter Notebook</p>
-				</header>
-					
-					<!-- One -->
-						<section class="wrapper style4 container">
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="container">
+        <a class="back-link" href="index.html#projects"><i class="fas fa-arrow-left" aria-hidden="true"></i> <span data-i18n="c.back">All projects</span></a>
+        <span class="page-hero__kicker" data-i18n="pp.kicker">Python analysis</span>
+        <h1 id="page-title" data-i18n="pp.h1">Reasons for customer churn</h1>
+        <p class="page-hero__sub" data-i18n="pp.sub">An analysis in Python, done in Jupyter Notebook.</p>
+        <ul class="chips" aria-label="Technologies" data-i18n-attr="aria-label:a.tech"><li class="chip">Python</li><li class="chip">Jupyter</li><li class="chip">Pandas</li><li class="chip">Random Forest</li></ul>
+      </div>
+    </section>
 
-							<!-- Content -->
-								<div class="content">
-									<section>
-											<h1><b>Opis projektu</b></h1>
-										<p>Zjawisko rezygnacji klientów, stanowi jedno z głównych wyzwań w branży telekomunikacyjnej. Celem tego projektu było przeprowadzenie szczegółowej analizy danych dotyczących klientów, w tym ich cech demograficznych, historii subskrypcji, preferencji dotyczącej usług oraz metod płatności w kontekście decyzji o rezygnacji z usług. Analiza została zrealizowana w języku Python przy użyciu Jupyter Notebook z zastosowaniem technik eksploracji i modelowania danych. Główne założenie projektu stanowiło identyfikację kluczowych czynników, które wpływają na decyzje klientów o rezygnacji, co pozwoliło na wyodrębnienie istotnych wzorców i zrozumienie dynamiki tego zjawiska. Uzyskane wnioski mogą stanowić podstawę do opracowania skutecznych strategii mających na celu zwiększenie poziomu lojalności oraz spadek retencji klientów w branży telekomunikacyjnej.</p>
+    <section class="section">
+      <div class="container layout">
+        <article class="prose">
+          <h2 data-i18n="c.h.desc">Project description</h2>
+          <p data-i18n="pp.p1">Customer churn is one of the main challenges in the telecommunications industry. The goal of this project was a detailed analysis of customer data – demographics, subscription history, service preferences and payment methods – in the context of the decision to cancel services. The analysis was done in Python using Jupyter Notebook, with data exploration and modelling techniques. The main aim was to identify the key factors that influence customers' decisions to leave, which made it possible to extract important patterns and understand the dynamics of the phenomenon. The conclusions can be a basis for effective strategies to increase customer loyalty and retention in the telecommunications industry.</p>
+          <p data-i18n="pp.p2">The analysis with a description and the Python code is available <a href="https://github.com/KatarzynaTondas/Python-Projects/blob/main/CustomersChurn_analysis.ipynb">in the GitHub repository</a>.</p>
+          <figure class="shot">
+  <a class="shot__link" href="images/ChurnPaymentMethod.png"><img src="images/ChurnPaymentMethod.png" width="1078" height="724" loading="lazy" decoding="async" alt="Bar chart: payment method vs. customer churn" data-i18n-attr="alt:pp.fig1.alt"><span class="shot__zoom" aria-hidden="true"><i class="fas fa-search-plus"></i></span></a>
+  <figcaption data-i18n="pp.fig1.cap">Fig. 1. Example analysis in Python – payment method vs. customer churn.</figcaption>
+</figure>
 
-										<p> ✧ Analiza danych wraz z opisem i kodem Python jest dostępna <a href="https://github.com/KatarzynaTondas/Python-Projects/blob/main/CustomersChurn_analysis.ipynb/"> w repozytorium Github.</a></p>
-										<style>
-											ol {
-												margin: 2; /* Zmniejsza margines wokół listy */
-												padding: 2; /* Zmniejsza odstęp wewnętrzny listy */
-											}
-											ol li {
-												margin-bottom: 5px; /* Zmniejsza odstęp między elementami listy */
-											}
-										</style>
-										<!--
-										<ol>
-											<li> Strona tytułowa - strona wstępna z wprowadzeniem do raportu.</li>
-											<li> Sprzedaż - karta prezentująca główne wskaźniki KPI, trend sprzedaży oraz kosztów w wybranym przez Użytkownika raportu okresie w odniesieniu do marży %. </li>
-											<li> Produkty - karta zawierająca dane szczegółowe dotyczące sprzedaży poszczególnych produktów m.in. według kategorii, top sprzedających się produktów, sprzedaży narastająco w ujęciu MTD oraz YTD, udziału sprzedaży produktów zawierających alergeny. </li>
-											<li> Drzewo dekompozycji - wizaualizacja dynamiczna, umożliwiająca analizę wybranej wielkości: marży, kosztów lub sprzedaży pod kątem nałożonych przez Użytkownika filtrów. </li>
-										</ol>
-									-->
-										<figure>
-											<a href="#" class="image featured" onclick="zoomImage(event)">
-												<img src="images/ChurnPaymentMethod.png" alt="Obrazek" />
-											</a>
-											<figcaption class="caption">Rys. 1. Przykładowa analiza danych przy pomocy Python - metoda płatności za usługi telekomunikacyjne a rezygnacja klientów.</figcaption>
-										</figure>
-										
-										<style>
-											.caption {
-												font-size: 12px; /* Zmienia rozmiar czcionki */
-												color: #555; /* Zmienia kolor tekstu */
-												text-align: center; /* Wyrównuje tekst do środka */
-												margin-top: 1px;  /* Dodaje odstęp powyżej podpisu */
-												margin-bottom: 20px;
-											}
-										</style>
-										<br>
-										<a><p>➤ <b>Opis wykonanych prac:</b></p> </a>
-										<ol>
-											<li> <b>Wczytanie danych i wstępna eksploracja</b> - zestaw danych został załadowany do ramki danych Pandas (Data frame - dwuwymiarowa struktura danych podobna do tabeli w bazie danych lub arkusza kalkulacyjnego Excela). Sprawdzono strukturę danych, w tym ich rozmiar, nazwy kolumn i podstawowe statystyki, aby uzyskać ogólny obraz zestawu danych.</li>
-											<li> <b>Czyszczenie danych i weryfikacja kompletności danych</b> - przeprowadzono wstępne sprawdzenie danych pod kątem brakujących wartości oraz nieprawidłowości danych.</li>
-											<li> <b>Analiza danych</b> - w celu lepszego zrozumienia danych oraz czynników, które mogą mieć znaczenie przy podejmowaniu decyzji o rezygnacji klientów usług, zostały przeprowadzone następujące analizy:
-												<ul>
-													<li>Rozkład klientów - przeanalizowano proporcje klientów, którzy odeszli oraz tych, którzy pozostali, aby zrozumieć ich udział w zestawie danych</li>
-													<li>Dystrybucja płci</li>
-													<li>Preferencje dotyczące płatności a rezygnacje klientów</li>
-													<li>Dystrybucja stażu - przeanalizowano, czy długość korzystania z usług wpływa na rezygnację klientów</li>
-													<li>Rodzaj usługi internetowych, z których korzystają klienci</li>
-													<li>Rodzaje umów klientów a rezygnacja klientów</li>
-													<li>Wysokość opłat a rezygnacja klientów</li>
-													<li>Korzystanie z konkretnych usług internetowych oraz telefonicznych w kontekście odpływu klientów</li>
-													</li>
-												</ul>
-												
-											<li><b>Analiza Heatmapy Korelacji</b> - w projekcie przeprowadzono analizę korelacji między różnymi cechami o charaketrze liczbowym, aby zrozumieć zależności między poszczególnymi zmiennymi. Wykorzystano Heatmapę Korelacji do wizualizacji tych zależności, co pozwoliło na łatwe identyfikowanie silnych i słabych korelacji między różnymi atrybutami, takimi jak wysokość opłat, staż klientów. Do obliczeń użyto korelację Pearsona, która jest wykorzystywana do badania zmiennych liczowych o rozkładzie zbliżonym do rozkładu normalnego. status klientów. Analiza ta może pomóc zrozumieć, które cechy mają największy wpływ na pozostałe, a także dostarczyć wskazówek odnośnie kolejnego kierunku analizy. </li>
-											
-											<br>
-											<section>
-											<figure>
-												<a href="#" class="image featured" onclick="zoomImage(event)">
-													<img src="images/CorrelationHeatmap.png" alt="Obrazek" />
-												</a>
-												<figcaption class="caption">Rys. 2. Heatmapa badania korelacji między zmiennymi.</figcaption>
-											</figure>
-											</section>
-											
+          <h2 data-i18n="pp.h.work">What I did</h2>
+          <ol class="steps">
+            <li data-i18n="pp.w1"><strong>Loading and initial exploration</strong> – the dataset was loaded into a Pandas DataFrame (a two-dimensional data structure similar to a database table or an Excel sheet). I checked the structure of the data, including its size, column names and basic statistics, to get a general picture of the dataset.</li>
+            <li data-i18n="pp.w2"><strong>Cleaning and completeness check</strong> – the data was checked for missing values and irregularities.</li>
+            <li><span data-i18n="pp.w3"><strong>Data analysis</strong> – to better understand the data and the factors that may matter for the decision to leave, I analysed:</span>
+<ul>
+  <li data-i18n="pp.a1">customer distribution – the share of customers who left and who stayed, to understand their proportion in the dataset</li>
+  <li data-i18n="pp.a2">gender distribution</li>
+  <li data-i18n="pp.a3">payment preferences vs. churn</li>
+  <li data-i18n="pp.a4">tenure distribution – whether the length of service use affects churn</li>
+  <li data-i18n="pp.a5">type of internet service customers use</li>
+  <li data-i18n="pp.a6">contract types vs. churn</li>
+  <li data-i18n="pp.a7">charges vs. churn</li>
+  <li data-i18n="pp.a8">use of specific internet and phone services in the context of churn</li>
+</ul>
+            </li>
+            <li><span data-i18n="pp.w4"><strong>Correlation heatmap</strong> – I analysed correlations between numerical features to understand relationships between variables. A correlation heatmap visualises them, making it easy to spot strong and weak correlations between attributes such as charges and customer tenure. I used Pearson correlation, which is suited to numerical variables with a distribution close to normal. The analysis helps show which features influence the others most and gives hints for the next direction of analysis.</span>
+              <figure class="shot">
+  <a class="shot__link" href="images/CorrelationHeatmap.png"><img src="images/CorrelationHeatmap.png" width="912" height="527" loading="lazy" decoding="async" alt="Heatmap of correlations between variables" data-i18n-attr="alt:pp.fig2.alt"><span class="shot__zoom" aria-hidden="true"><i class="fas fa-search-plus"></i></span></a>
+  <figcaption data-i18n="pp.fig2.cap">Fig. 2. Heatmap of correlations between variables.</figcaption>
+</figure>
+            </li>
+            <li><span data-i18n="pp.w5"><strong>Feature importance with Random Forest</strong> – to further assess which features most influence the decision to leave, I analysed feature importance with the Random Forest algorithm, which works with both numerical and non-numerical features. The algorithm made it possible to assess how individual variables influence the prediction of churn, and to identify the key factors with the greatest impact on the decision to cancel.</span>
+              <figure class="shot">
+  <a class="shot__link" href="images/RandomForest.png"><img src="images/RandomForest.png" width="1243" height="595" loading="lazy" decoding="async" alt="Feature importance chart from the Random Forest algorithm" data-i18n-attr="alt:pp.fig3.alt"><span class="shot__zoom" aria-hidden="true"><i class="fas fa-search-plus"></i></span></a>
+  <figcaption data-i18n="pp.fig3.cap">Fig. 3. Feature importance results from the Random Forest algorithm.</figcaption>
+</figure>
+            </li>
+          </ol>
 
-											<p><li><b>Analiza Ważności Cech przy użyciu Random Forest </b> - w celu dalszej oceny tego, które cechy mają największy wpływ na decyzję klientów o rezygnacji, przeprowadzono analizę ważności cech z wykorzystaniem algorytmu Random Forest, który jest wykorzystywany w badaniu zarówno cech liczbowych jak i nie liczbowych. 
-												Algorytm umożliwił ocenę, jak poszczególne zmienne wpływają na przewidywanie odejścia klientów, dostarczając cennych informacji o tym, które cechy są najistotniejsze w modelowaniu. Dzięki tej analizie możliwe było zidentyfikowanie kluczowych czynników, które miały największy wpływ na decyzję klienta o rezygnacji.
-												<section>
-													<br>
-													<figure>
-														<a href="#" class="image featured" onclick="zoomImage(event)">
-															<img src="images/RandomForest.png" alt="Obrazek" />
-														</a>
-														<figcaption class="caption">Rys. 3. Wyniki analizy ważności cech z użyciem algorytmu Random Forest.</figcaption>
-													</figure>
-													</section>
-											</li>
-										</ol>
-										<a><p>➤ <b>Zalety wykorzystania języka Python oraz Jupyter Notebook:</b></p> </a> 
-										<p><b>Język Python</b> to jedno z najpotężniejszych narzędzi w analizie danych, oferujące szeroki zestaw bibliotek takich jak Pandas, NumPy, Scikit-learn czy TensorFlow, które wspierają cały proces analizy danych, modelowania statystycznego oraz uczenia maszynowego. Jego elastyczność pozwala na manipulowanie danymi, czyszczenie ich oraz tworzenie wykresów i raportów. </p>
-											<p>Wykorzystanie <b>Jupyter Notebook</b> w tym kontekście doskonale wspiera ten proces, oferując interaktywne środowisko, które umożliwia łatwe eksperymentowanie z danymi i modelami danych. Dzięki możliwości bieżącego monitorowania wyników, dokumentowania kodu, dodawania wizualizacji oraz iteracyjnego testowania modeli, Jupyter staje się idealnym narzędziem do pracy nad takimi analizami, ułatwiając prezentację wyników w sposób przejrzysty i zrozumiały.</p>
+          <details class="disclosure">
+  <summary data-i18n="pp.why.title">Why Python and Jupyter Notebook</summary>
+  <div class="disclosure__body">
+  <p data-i18n="pp.why.1"><strong>Python</strong> is one of the most powerful tools in data analysis, offering a wide range of libraries such as Pandas, NumPy, Scikit-learn or TensorFlow, which support the whole process of data analysis, statistical modelling and machine learning. Its flexibility makes it possible to manipulate and clean data and to create charts and reports.</p>
+  <p data-i18n="pp.why.2"><strong>Jupyter Notebook</strong> supports this process very well, offering an interactive environment for easy experimentation with data and models. Thanks to live monitoring of results, documenting code, adding visualisations and iterative testing of models, Jupyter is an ideal tool for this kind of analysis, helping present the results clearly and understandably.</p>
+  </div>
+</details>
 
-											<a><p>➤ <b>Źródło danych:</b></p> </a>
-											<p>✧ KAGGLE<a href="https://www.kaggle.com/datasets/blastchar/telco-customer-churn/"> dataset </a></p>
+          <h2 data-i18n="c.h.src">Data source</h2>
+          <p data-i18n="pp.src">Kaggle <a href="https://www.kaggle.com/datasets/blastchar/telco-customer-churn/">dataset: Telco Customer Churn</a>.</p>
+        </article>
+      <aside class="aside" aria-labelledby="facts-title">
+        <h2 id="facts-title" data-i18n="c.facts">Project facts</h2>
+        <dl class="facts">
+          <div><dt data-i18n="c.type">Type</dt><dd><span data-i18n="pp.f.type">Data analysis</span></dd></div>
+          <div><dt data-i18n="c.tools">Tools</dt><dd><ul class="chips"><li class="chip">Python</li><li class="chip">Jupyter</li><li class="chip">Pandas</li><li class="chip">Random Forest</li></ul></dd></div>
+          <div><dt data-i18n="c.data">Data</dt><dd><span data-i18n="pp.f.data">Kaggle: <a href="https://www.kaggle.com/datasets/blastchar/telco-customer-churn/" target="_blank" rel="noopener noreferrer">Telco Customer Churn</a></span></dd></div>
+          <div><dt data-i18n="c.links">Links</dt><dd><a href="https://github.com/KatarzynaTondas/Python-Projects/blob/main/CustomersChurn_analysis.ipynb" target="_blank" rel="noopener noreferrer" data-i18n="pp.f.repo">Notebook on GitHub</a></dd></div>
+        </dl>
+      </aside>
+      </div>
+    </section>
 
+    <section class="section related" aria-labelledby="more-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__kicker">Portfolio</span>
+          <h2 class="section__title" id="more-title" data-i18n="c.more">More projects</h2>
+          <p class="section__desc" data-i18n="c.more.desc">Other reports and analyses from my portfolio.</p>
+        </div>
+        <div class="grid">
+          <article class="card reveal">
+            <div class="card__media">
+              <span class="card__tool">SQL</span>
+              <img src="images/CovidSQL.png" width="1200" height="750" loading="lazy" decoding="async"
+                   alt="SQL queries for COVID-19 data analysis" data-i18n-attr="alt:covid.alt">
+              <div class="card__overlay" aria-hidden="true"><span><span data-i18n="proj.view">View project</span> <i class="fas fa-arrow-right"></i></span></div>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title"><a href="AnalizaSQL.html" data-i18n="covid.title">COVID-19 in SQL</a></h3>
+              <p class="card__text" data-i18n="covid.text">A set of SQL queries created to analyse COVID-19 data.</p>
+              <ul class="card__tags" aria-label="Project technologies" data-i18n-attr="aria-label:a.ptech"><li class="tag">SQL</li></ul>
+            </div>
+          </article>
+          <article class="card reveal">
+            <div class="card__media">
+              <span class="card__tool">Power BI</span>
+              <img src="images/Customers.png" width="1200" height="750" loading="lazy" decoding="async"
+                   alt="Power BI Sales Analysis report – sales and customer analysis" data-i18n-attr="alt:sales.alt">
+              <div class="card__overlay" aria-hidden="true"><span><span data-i18n="proj.view">View project</span> <i class="fas fa-arrow-right"></i></span></div>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title"><a href="SalesAnalysis.html">Sales Analysis</a></h3>
+              <p class="card__text" data-i18n="sales.text">Interactive report analysing sales data and customer preferences.</p>
+              <ul class="card__tags" aria-label="Project technologies" data-i18n-attr="aria-label:a.ptech"><li class="tag">Power BI</li><li class="tag">DAX</li></ul>
+            </div>
+          </article>
+          <article class="card reveal">
+            <div class="card__media">
+              <span class="card__tool">Power BI</span>
+              <img src="images/CoffeShop1.png" width="1200" height="750" loading="lazy" decoding="async"
+                   alt="Power BI Coffee Shop report – coffee shop sales analysis" data-i18n-attr="alt:coffee.alt">
+              <div class="card__overlay" aria-hidden="true"><span><span data-i18n="proj.view">View project</span> <i class="fas fa-arrow-right"></i></span></div>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title"><a href="CoffeShop.html">Coffee Shop</a></h3>
+              <p class="card__text" data-i18n="coffee.text">A report on sales, costs and margin – with a decomposition tree and a “from overview to detail” layout.</p>
+              <ul class="card__tags" aria-label="Project technologies" data-i18n-attr="aria-label:a.ptech"><li class="tag">Power BI</li><li class="tag">DAX</li><li class="tag">Power Query</li></ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<!--
-										Jednym z założeń, którym kierowałam się podczas projektowania układu raportu była prezentacja danych w ujęciu od ogółu do szczegółu. Zostało to zrealizowane poprzez budowę trzech kart raportu, a każda z nich umożliwia przeprowadzenie coraz bardziej szczegółowej analizy. Karta <b>Sprzedaż</b> (Rys.1.) została tak zaprojektowana, aby dawać ogólny wgląd w analizę sprzedży, kosztów i marży. 
-										Karta <b>Produkty</b> (Rys. 2.) umożliwia zagłębienie się w dalsze szczegóły wskaźników, które zainteresowały Użytkownika raportu.
-									    Natomiast, <b>drzewo dekompozycji</b> (Rys.3.), umieszczone na ostatniej karcie to dynamiczna i interaktywna wizualizacja, która pozwala na analizę danych w wielu wymiarach. Automatycznie agreguje dane i umożliwia przechodzenie do szczegółów w dowolnej kolejności. 
-										Drzewo dekompozycji jest potężnym narzędziem do analizy danych, które może znacząco ułatwić zrozumienie złożonych zestawów danych i podejmowanie decyzji biznesowych. </p>
-										<figure>
-											<a href="#" class="image featured" onclick="zoomImage(event)">
-												<img src="images/CoffeShop3.png" alt="" />
-											</a>
-											<figcaption class="caption">Rys. 2. Widok karty Produkty - umożliwiającej szczegółową analizę danych.</figcaption>
-										</figure>
-										
-										<style>
-											.caption {
-												font-size: 12px; /* Zmienia rozmiar czcionki */
-												color: #555; /* Zmienia kolor tekstu */
-												text-align: center; /* Wyrównuje tekst do środka */
-												margin-top: 1px;  /* Dodaje odstęp powyżej podpisu */
-												margin-bottom: 20px;
-											}
-										</style>
+  </main>
 
+  <footer class="site-footer">
+    <div class="container">
+      <span>&copy; 2026 Katarzyna Tondaś</span>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/katarzynatondas/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/KatarzynaTondas/" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="#contact" data-user="tondas.katarzyna" data-domain="gmail.com" data-i18n="contact.mail">Write to me</a>
+        <a href="#main"><span data-i18n="footer.top">Back to top</span> <i class="fas fa-arrow-up" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </footer>
 
-												<figure>
-													<a href="#" class="image featured" onclick="zoomImage(event)">
-														<img src="images/CoffeShop4.png" alt="" />
-													</a>
-													<figcaption class="caption">Rys. 3. Prezentacja wizualizacji drzewo dekompozycji.</figcaption>
-												</figure>
-												
-												<style>
-													.caption {
-														font-size: 12px; /* Zmienia rozmiar czcionki */
-														color: #555; /* Zmienia kolor tekstu */
-														text-align: center; /* Wyrównuje tekst do środka */
-														margin-top: 1px;  /* Dodaje odstęp powyżej podpisu */
-														margin-bottom: 20px;
-													}
-												</style>
-									</section>
-									<header>
-										<h1><b>ZALETY BUDOWANIA RAPORTÓW W POWER BI</b></h1>
-										
-									</header>
-									<p>Dynamiczne wizualizacje w Power BI oferują wiele zalet, które mogą znacząco poprawić analizę i prezentację danych. Do najważniejszych z nich można zaliczyć:</p>
-									<style>
-										p {
-											margin-bottom: 20px; /* Zmniejsza odstęp poniżej elementu <p> */
-										}
-									</style>
-
-									<style>
-										ol {
-											margin: 2; /* Zmniejsza margines wokół listy */
-											padding: 2; /* Zmniejsza odstęp wewnętrzny listy */
-										}
-										ol li {
-											margin-bottom: 10px; /* Zmniejsza odstęp między elementami listy */
-										}
-									</style>
-									<ol class="custom-list">
-   									<li>Przejrzystość i efektywność - dzięki zaawansowanym funkcjom analitycznym i możliwości tworzenia interaktywnych raportów, Power BI pomaga w przejrzystej i efektywnej prezentacji danych, co ułatwia podejmowanie decyzji biznesowych.</li>
-    								<li>Integracja z różnymi źródłami danych - Power BI umożliwia integrację danych z różnych źródeł, takich jak bazy danych, pliki Excel, usługi chmurowe czy aplikacje biznesowe, co pozwala na tworzenie kompleksowych i spójnych raportów.</li>
-    								<li>Interaktywność - Użytkownicy mogą wchodzić w interakcje z danymi, filtrując je, sortując i eksplorując różne widoki. To pozwala na głębszą analizę i lepsze zrozumienie danych.</li>
-   									<li>Łatwość porównywania danych - dynamiczne wykresy, pozwalają na szybkie porównanie wartości między różnymi kategoriami oraz analizę trendów w danych.</li>
-									<li>Dobór częstotliwości odświeżania danych - w zależności od potrzeby biznesowej, użytkownik może określić częstotliwość odświeżania danych, co pozwala na dostosowanie analizy do specyficznych wymagań i zapewnia aktualność informacji.</li>
-
-								</ol>
-
-									<style>
-									.custom-list {
-    								list-style-type: disc;
-									}
-								</style>
-								-->
-								</div>
-
-						</section>
-							
-					<!-- Two -->
-						<section class="wrapper style1 container special">
-							<div class="row">
-								<div class="col-4 col-12-narrower">
-
-									<section>
-										<header>
-											<h3>Raport w Power BI</h3>
-											<a href="CoffeShop.html" class="image featured" style="margin-bottom: 10px;"><img src="images/CoffeShop.png" alt="" /></a>
-										</header>
-										<p>Raport Coffe Shop wykonany w Power BI dotyczący analizy danych sprzedażowych.</p>
-										<footer>
-											<ul class="buttons">
-												<li><a href="CoffeShop.html" class="button small">więcej</a></li>
-											</ul>
-										</footer>
-									</section>
-								</div>
-								
-								<div class="col-4 col-12-narrower">
-
-									<section>
-										<header>
-											<h3>Raport w Tableau</h3>
-											<a href="RaportTableau.html" class="image featured" style="margin-bottom: 10px;"><img src="images/RaportTableau.png" alt="" /></a>
-										</header>
-										<p>Raport typu Overview prezentujący ogólne wskaźniki danych sprzedażowych.</p>
-										<footer>
-											<ul class="buttons">
-												<li><a href="RaportTableau.html" class="button small">więcej</a></li>
-											</ul>
-										</footer>
-									</section>
-								</div>
-								
-								<div class="col-4 col-12-narrower">
-
-									<section>
-										<header>
-											<h3>Analiza SQL</h3>
-											<a href="AnalizaSQL.html" class="image featured" style="margin-bottom: 10px;"><img src="images/CovidSQL.png" alt="" /></a>
-										</header>
-										<p>Zbiór zapytań SQL utworzonych w celu analizy danych COVID-19.</p>
-										<footer>
-											<ul class="buttons">
-												<li><a href="AnalizaSQL.html" class="button small">więcej</a></li>
-											</ul>
-										</footer>
-									</section>
-
-								</div>
-							</div>
-							
-						</section>
-
-						
-				</article>
-
-			<!-- Footer -->
-				<footer id="footer">
-
-					<ul class="icons">
-						<!--<li><a href="#" class="icon brands circle fa-twitter"><span class="label">Twitter</span></a></li>-->
-						<!--<li><a href="#" class="icon brands circle fa-facebook-f"><span class="label">Facebook</span></a></li>-->
-						<li><a href="mailto:tondas.katarzyna@gmail.com" class="icon brands circle fa-google"><span class="label">Gmail</span></a></li>
-						<li><a href="https://www.linkedin.com/in/katarzynatondas/" class="icon brands circle fa-linkedin"><span class="label">Linkedin</span></a></li>
-						<li><a href="https://github.com/KatarzynaTondas/" class="icon brands circle fa-github"><span class="label">Github</span></a></li>
-						<!--<li><a href="#" class="icon brands circle fa-dribbble"><span class="label">Dribbble</span></a></li>-->
-					</ul>
-
-					<ul class="copyright" style="margin: 20px; padding: 20px;">
-						<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a> - The original work has been modified</li>
-					</ul>
-
-				</footer>
-
-		</div>
-
-		<!-- Scripts -->
-
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.dropotron.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
-		<script src="assets/js/jquery.scrollgress.min.js"></script>
-		<script src="assets/js/jquery.scrollex.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
-	</body>
+  <script src="assets/js/translations.js"></script>
+  <script src="assets/js/portfolio.js"></script>
+</body>
 </html>

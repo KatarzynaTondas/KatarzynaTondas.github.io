@@ -1,219 +1,187 @@
-<!DOCTYPE HTML>
-<!--
-	Twenty by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Katarzyna Tondaś - analiza danych</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="pq.title">COVID-19 analysis in SQL | Katarzyna Tondaś</title>
+  <meta name="description" content="COVID-19 data analysis in SQL: infections, mortality rates and vaccination progress across the world." data-i18n-attr="content:pq.desc">
+  <meta name="author" content="Katarzyna Tondaś">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#0b1220">
 
-		
-	</head>
-	<body class="no-sidebar is-preload">
-		<div id="page-wrapper">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="COVID-19 analysis in SQL | Katarzyna Tondaś" data-i18n-attr="content:pq.title">
+  <meta property="og:description" content="COVID-19 data analysis in SQL: infections, mortality rates and vaccination progress across the world." data-i18n-attr="content:pq.desc">
+  <meta property="og:image" content="images/CovidSQL.png">
+  <meta property="og:locale" content="en_US">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/portfolio.css">
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="a.skip">Skip to content</a>
 
-			<!-- Header -->
-			<header id="header">
-				<h1 id="logo"><a href="index.html">Twenty <span>by HTML5 UP</span></a></h1>
-				<nav id="nav">
-					<ul>
-						<li class="current"><a href="index.html">Strona startowa</a></li>
-						<li><a href="Omnie.html">O mnie</a></li>
-						<li class="submenu has-submenu">
-							<a href="Portfolio.html" class="button primary">Portfolio</a>
-							<ul>
-								<li><a href="SalesAnalysis.html">Sales Analysis - raport Power BI</a></li>
-								<li><a href="CoffeShop.html">Coffe Shop - raport Power BI</a></li>
-								<li><a href="RaportTableau.html">Overview - raport Tableau</a></li>
-								<li><a href="AnalizaPython.html">Opływ klientów - analiza Python</a></li>
-								<li><a href="AnalizaSQL.html">COVID-19 - analiza SQL</a></li>
-							</ul>
-						</li>
-					</ul>
-				</nav>
-			</header>
-			
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="Katarzyna Tondaś – home page" data-i18n-attr="aria-label:a.home">
+        <span class="brand__mark" aria-hidden="true">KT</span>
+        Katarzyna Tondaś
+      </a>
 
-			<!-- Main -->
+      <nav class="nav" id="site-nav" aria-label="Main navigation" data-i18n-attr="aria-label:a.nav">
+        <ul class="nav__list">
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="index.html#projects" aria-current="true" data-i18n="nav.projects">Projects</a></li>
+          <li><a href="Omnie.html" data-i18n="nav.about">About me</a></li>
+          <li><a class="nav__cta" href="index.html#contact" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+      </nav>
 
-			<article id="main">
+      <div class="header-tools">
+        <div class="lang-switch" role="group" aria-label="Language" data-i18n-attr="aria-label:a.lang">
+          <button type="button" class="lang-switch__btn" data-lang="en" lang="en" aria-pressed="true" title="English">EN</button>
+          <button type="button" class="lang-switch__btn" data-lang="pl" lang="pl" aria-pressed="false" title="Polski">PL</button>
+        </div>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          <span class="nav-toggle__bars" aria-hidden="true"></span>
+          <span class="sr-only" data-i18n="a.menu">Menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main id="main">
 
-				<header class="special container">
-					<span class="icon solid fa-database"></span>
-					<h1><span style="color: #83d3c9;"><b>COVID-19 - zachorowania i szczepienia</b> </span><strong> - analiza danych</strong></h1>
-					<p>wykonana z użyciem języka baz danych SQL</p>
-				</header>
-					
-					<!-- One -->
-						<section class="wrapper style4 container">
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="container">
+        <a class="back-link" href="index.html#projects"><i class="fas fa-arrow-left" aria-hidden="true"></i> <span data-i18n="c.back">All projects</span></a>
+        <span class="page-hero__kicker" data-i18n="pq.kicker">SQL analysis</span>
+        <h1 id="page-title" data-i18n="pq.h1">COVID-19 – cases and vaccinations</h1>
+        <p class="page-hero__sub" data-i18n="pq.sub">A data analysis done in SQL.</p>
+        <ul class="chips" aria-label="Technologies" data-i18n-attr="aria-label:a.tech"><li class="chip">SQL</li></ul>
+      </div>
+    </section>
 
-							<!-- Content -->
-								<div class="content">
-									<section>
-											<h1><b>Opis projektu</b></h1>
-										<p>Celem projektu była analiza danych dotyczących pandemii COVID-19 z wykorzystaniem SQL. Badanie obejmowało dynamikę rozprzestrzeniania się wirusa, wskaźniki śmiertelności oraz postęp szczepień w różnych regionach świata. Wyniki analizy dostarczają cennych informacji, które mogą wspierać decyzje w zakresie zdrowia publicznego.</p>
+    <section class="section">
+      <div class="container layout">
+        <article class="prose">
+          <h2 data-i18n="c.h.desc">Project description</h2>
+          <p data-i18n="pq.p1">The goal of the project was to analyse data on the COVID-19 pandemic using SQL. The study covered how the virus spread, mortality rates and vaccination progress in different regions of the world. The results provide valuable information that can support public health decisions.</p>
+          <p data-i18n="pq.p2">The analysis with a description and the SQL code is available <a href="https://github.com/KatarzynaTondas/PortfolioSQL/">in the GitHub repository</a>.</p>
 
-										<p>Analiza danych wraz z opisem i kodem SQL jest dostępna <a href="https://github.com/KatarzynaTondas/PortfolioSQL/"> w repozytorium Github.</a></p>
-										<style>
-											ol {
-												margin: 2; /* Zmniejsza margines wokół listy */
-												padding: 2; /* Zmniejsza odstęp wewnętrzny listy */
-											}
-											ol li {
-												margin-bottom: 5px; /* Zmniejsza odstęp między elementami listy */
-											}
-										</style>
-										<!--
-										<ol>
-											<li> Strona tytułowa - strona wstępna z wprowadzeniem do raportu.</li>
-											<li> Sprzedaż - karta prezentująca główne wskaźniki KPI, trend sprzedaży oraz kosztów w wybranym przez Użytkownika raportu okresie w odniesieniu do marży %. </li>
-											<li> Produkty - karta zawierająca dane szczegółowe dotyczące sprzedaży poszczególnych produktów m.in. według kategorii, top sprzedających się produktów, sprzedaży narastająco w ujęciu MTD oraz YTD, udziału sprzedaży produktów zawierających alergeny. </li>
-											<li> Drzewo dekompozycji - wizaualizacja dynamiczna, umożliwiająca analizę wybranej wielkości: marży, kosztów lub sprzedaży pod kątem nałożonych przez Użytkownika filtrów. </li>
-										</ol>
-									-->
-									
-										<style>
-											.caption {
-												font-size: 12px; /* Zmienia rozmiar czcionki */
-												color: #555; /* Zmienia kolor tekstu */
-												text-align: center; /* Wyrównuje tekst do środka */
-												margin-top: 1px;  /* Dodaje odstęp powyżej podpisu */
-												margin-bottom: 20px;
-											}
-										</style>
-							
-										<a><p>➤ <b>Zakres analizy:</b></p> </a>
-										<ol>
-											<li> <b>Eksploracja danych</b> - weryfikacja kompletności i struktury zbioru danych.</li>
-											<li> <b>Wskaźniki śmiertelności</b> - obliczenie odsetka zgonów względem liczby zakażeń, identyfikacja regionów o najwyższej śmiertelności.</li>
-											<li> <b>Zasięg pandemii</b> - analiza odsetka populacji zakażonej w różnych krajach i kontynentach.</li>
-											<li> <b>Najbardziej dotknięte obszary</b> - identyfikacja państw o najwyższych wskaźnikach zakażeń w stosunku do populacji.</li>
-											<li> <b>Trendy globalne</b> - analiza dziennej liczby nowych przypadków i zgonów, określenie dynamiki pandemii.</li>	
-											<li> <b>Szczepienia</b> - ocena zależności między liczbą zaszczepionych a populacją.</li>
-												<br>
-										<section>
-											<figure>
-												<a href="#" class="image featured" onclick="zoomImage(event)">
-													<img src="images/CovidSQL.png" alt="Obrazek" />
-												</a>
-												<figcaption class="caption">Rys. 1. Fragment kodu z analizą SQL.</figcaption>
-											</figure>
-											</section>
-											</ol>
-											<a><p>➤ <b>Analiza danych jako narzędzie wsparcia działań zdrowotnych:</b></p> </a> 										
-											<p>Przeprowadzona analiza pozwoliła na głębsze zrozumienie przebiegu pandemii oraz jej wpływu na społeczeństwo. Dzięki identyfikacji obszarów o najwyższych wskaźnikach zakażeń i śmiertelności, możliwe stało się ukierunkowanie działań prewencyjnych oraz optymalizacja polityki zdrowotnej w regionach najbardziej narażonych. Ponadto, analiza postępu szczepień dostarcza cennych informacji, które mogą stanowić podstawę oceny efektywności kampanii szczepionkowych i pomóc w dalszym doskonaleniu strategii zdrowotnych.</p>
-											<a><p>➤ <b>Zalety wykorzystania języka SQL w projekcie:</b></p> </a>					
-										<ol>
-											<li><b>Efektywne przetwarzanie dużych zbiorów danych</b> – język SQL oraz silnik baz danych są zoptymalizowane pod kątem pracy z dużymi zbiorami danych, co pozwala na szybkie przetwarzanie milionów rekordów, nawet w przypadku globalnych danych o pandemii.</li>
-										
-											<li><b>Możliwość zaawansowanej analizy</b> – język SQL umożliwia stosowanie złożonych zapytań, agregacji, filtrowania oraz obliczeń statystycznych, co pozwala na analizę trendów, porównywanie regionów i identyfikację obszarów szczególnie dotkniętych pandemią.</li>
-										
-											<li><b>Strukturalna organizacja danych</b> – dane są przechowywane w relacyjnych bazach danych, co zapewnia ich spójność, integralność i łatwy dostęp do kluczowych informacji, takich jak liczba zakażeń, zgonów czy szczepień w podziale na kraje i kontynenty.</li>
-										
-											<li><b>Możliwość łączenia różnych źródeł danych</b> – SQL pozwala na łatwe łączenie tabel, np. danych o zakażeniach i szczepieniach, co umożliwia analizę zależności między rozwojem pandemii a postępem kampanii szczepień.</li>
-										
-											<li><b>Reużywalność zapytań i automatyzacja</b> – zapytania SQL można zapisywać jako widoki (<i>views</i>), procedury składowane lub używać CTE i tabel tymczasowych, co ułatwia ponowną analizę danych i automatyzację raportowania.</li>
-										</ol>
-										<a><p>➤ <b>Źródło danych:</b></p> </a>
-										<p>✧ KAGGLE<a href="https://www.kaggle.com/datasets/tohidkhanbagani/covid-19-deaths-and-vaccinations-dataset/"> dataset</p></a>
-									</div>
+          <h2 data-i18n="pq.h.scope">Scope of the analysis</h2>
+          <ul class="steps">
+  <li data-i18n="pq.s1"><strong>Data exploration</strong> – checking the completeness and structure of the dataset.</li>
+  <li data-i18n="pq.s2"><strong>Mortality rates</strong> – calculating deaths as a share of infections and identifying the regions with the highest mortality.</li>
+  <li data-i18n="pq.s3"><strong>Reach of the pandemic</strong> – the share of the population infected across countries and continents.</li>
+  <li data-i18n="pq.s4"><strong>Most affected areas</strong> – identifying countries with the highest infection rates relative to population.</li>
+  <li data-i18n="pq.s5"><strong>Global trends</strong> – analysing daily new cases and deaths to determine the dynamics of the pandemic.</li>
+  <li data-i18n="pq.s6"><strong>Vaccinations</strong> – assessing the relationship between the number of vaccinated people and the population.</li>
+</ul>
+          <figure class="shot">
+  <a class="shot__link" href="images/CovidSQL.png"><img src="images/CovidSQL.png" width="1332" height="767" loading="lazy" decoding="async" alt="Fragment of SQL code used in the COVID-19 analysis" data-i18n-attr="alt:pq.fig.alt"><span class="shot__zoom" aria-hidden="true"><i class="fas fa-search-plus"></i></span></a>
+  <figcaption data-i18n="pq.fig.cap">Fig. 1. A fragment of the SQL analysis code.</figcaption>
+</figure>
 
-						</section>
-							
-					<!-- Two -->
-					<section class="wrapper style1 container special">
-						<div class="row">
-							<div class="col-4 col-12-narrower">
+          <h2 data-i18n="pq.h.health">Data analysis as a tool for supporting health action</h2>
+          <p data-i18n="pq.p3">The analysis gave a deeper understanding of the course of the pandemic and its impact on society. By identifying the areas with the highest infection and mortality rates, it became possible to target preventive measures and optimise health policy in the most vulnerable regions. In addition, the analysis of vaccination progress provides valuable information that can be a basis for assessing the effectiveness of vaccination campaigns and for further improving health strategies.</p>
 
-								<section>
-									<header>
-										<h3>Raport w Power BI</h3>
-										<a href="CoffeShop.html" class="image featured" style="margin-bottom: 10px;"><img src="images/CoffeShop.png" alt="" /></a>
-									</header>
-									<p>Raport Coffe Shop wykonany w Power BI dotyczący analizy danych sprzedażowych.</p>
-									<footer>
-										<ul class="buttons">
-											<li><a href="CoffeShop.html" class="button small">więcej</a></li>
-										</ul>
-									</footer>
-								</section>
-							</div>
-								
-								<div class="col-4 col-12-narrower">
+          <details class="disclosure">
+  <summary data-i18n="pq.why.title">Why use SQL in the project</summary>
+  <div class="disclosure__body">
+<ul>
+  <li data-i18n="pq.w1"><strong>Efficient processing of large datasets</strong> – SQL and database engines are optimised for large datasets, so millions of records can be processed quickly, even for global pandemic data.</li>
+  <li data-i18n="pq.w2"><strong>Advanced analysis</strong> – SQL supports complex queries, aggregations, filtering and statistical calculations, which makes it possible to analyse trends, compare regions and identify areas hit particularly hard by the pandemic.</li>
+  <li data-i18n="pq.w3"><strong>Structured organisation of data</strong> – data is stored in relational databases, which ensures consistency, integrity and easy access to key information such as the number of infections, deaths or vaccinations by country and continent.</li>
+  <li data-i18n="pq.w4"><strong>Combining different data sources</strong> – SQL makes it easy to join tables, e.g. data on infections and vaccinations, which allows analysing the relationship between the spread of the pandemic and the progress of vaccination campaigns.</li>
+  <li data-i18n="pq.w5"><strong>Reusable queries and automation</strong> – SQL queries can be saved as views or stored procedures, or use CTEs and temporary tables, which makes re-analysis and report automation easier.</li>
+</ul>
+  </div>
+</details>
 
-									<section>
-										<header>
-											<h3>Raport w Tableau</h3>
-											<a href="RaportTableau.html" class="image featured" style="margin-bottom: 10px;"><img src="images/RaportTableau.png" alt="" /></a>
-										</header>
-										<p>Raport typu Overview prezentujący ogólne wskaźniki danych sprzedażowych.</p>
-										<footer>
-											<ul class="buttons">
-												<li><a href="RaportTableau.html" class="button small">więcej</a></li>
-											</ul>
-										</footer>
-									</section>
-								</div>
-								
-								<div class="col-4 col-12-narrower">
+          <h2 data-i18n="c.h.src">Data source</h2>
+          <p data-i18n="pq.src">Kaggle <a href="https://www.kaggle.com/datasets/tohidkhanbagani/covid-19-deaths-and-vaccinations-dataset/">dataset: COVID-19 deaths and vaccinations</a>.</p>
+        </article>
+      <aside class="aside" aria-labelledby="facts-title">
+        <h2 id="facts-title" data-i18n="c.facts">Project facts</h2>
+        <dl class="facts">
+          <div><dt data-i18n="c.type">Type</dt><dd><span data-i18n="pq.f.type">Data analysis</span></dd></div>
+          <div><dt data-i18n="c.tools">Tools</dt><dd><ul class="chips"><li class="chip">SQL</li></ul></dd></div>
+          <div><dt data-i18n="c.data">Data</dt><dd><span data-i18n="pq.f.data">Kaggle: <a href="https://www.kaggle.com/datasets/tohidkhanbagani/covid-19-deaths-and-vaccinations-dataset/" target="_blank" rel="noopener noreferrer">COVID-19 deaths and vaccinations</a></span></dd></div>
+          <div><dt data-i18n="c.links">Links</dt><dd><a href="https://github.com/KatarzynaTondas/PortfolioSQL/" target="_blank" rel="noopener noreferrer" data-i18n="pq.f.repo">SQL code on GitHub</a></dd></div>
+        </dl>
+      </aside>
+      </div>
+    </section>
 
-									<section>
-										<header>
-											<h3>Analiza Python</h3>
-											<a href="AnalizaPython.html" class="image featured" style="margin-bottom: 10px;"><img src="images/AnalizaPython.png" alt="" /></a>
-										</header>
-										<p>Analiza danych dotycząca odpływu klientów wykonana w Jupyter Notebook.</p>
-										<footer>
-											<ul class="buttons">
-												<li><a href="AnalizaPython.html" class="button small">więcej</a></li>
-											</ul>
-										</footer>
-									</section>
+    <section class="section related" aria-labelledby="more-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__kicker">Portfolio</span>
+          <h2 class="section__title" id="more-title" data-i18n="c.more">More projects</h2>
+          <p class="section__desc" data-i18n="c.more.desc">Other reports and analyses from my portfolio.</p>
+        </div>
+        <div class="grid">
+          <article class="card reveal">
+            <div class="card__media">
+              <span class="card__tool">Power BI</span>
+              <img src="images/Customers.png" width="1200" height="750" loading="lazy" decoding="async"
+                   alt="Power BI Sales Analysis report – sales and customer analysis" data-i18n-attr="alt:sales.alt">
+              <div class="card__overlay" aria-hidden="true"><span><span data-i18n="proj.view">View project</span> <i class="fas fa-arrow-right"></i></span></div>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title"><a href="SalesAnalysis.html">Sales Analysis</a></h3>
+              <p class="card__text" data-i18n="sales.text">Interactive report analysing sales data and customer preferences.</p>
+              <ul class="card__tags" aria-label="Project technologies" data-i18n-attr="aria-label:a.ptech"><li class="tag">Power BI</li><li class="tag">DAX</li></ul>
+            </div>
+          </article>
+          <article class="card reveal">
+            <div class="card__media">
+              <span class="card__tool">Power BI</span>
+              <img src="images/CoffeShop1.png" width="1200" height="750" loading="lazy" decoding="async"
+                   alt="Power BI Coffee Shop report – coffee shop sales analysis" data-i18n-attr="alt:coffee.alt">
+              <div class="card__overlay" aria-hidden="true"><span><span data-i18n="proj.view">View project</span> <i class="fas fa-arrow-right"></i></span></div>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title"><a href="CoffeShop.html">Coffee Shop</a></h3>
+              <p class="card__text" data-i18n="coffee.text">A report on sales, costs and margin – with a decomposition tree and a “from overview to detail” layout.</p>
+              <ul class="card__tags" aria-label="Project technologies" data-i18n-attr="aria-label:a.ptech"><li class="tag">Power BI</li><li class="tag">DAX</li><li class="tag">Power Query</li></ul>
+            </div>
+          </article>
+          <article class="card reveal">
+            <div class="card__media">
+              <span class="card__tool">Tableau</span>
+              <img src="images/RaportTableau.png" width="1200" height="750" loading="lazy" decoding="async"
+                   alt="One-page Tableau report with overall sales indicators" data-i18n-attr="alt:tableau.alt">
+              <div class="card__overlay" aria-hidden="true"><span><span data-i18n="proj.view">View project</span> <i class="fas fa-arrow-right"></i></span></div>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title"><a href="RaportTableau.html" data-i18n="tableau.title">Overview in Tableau</a></h3>
+              <p class="card__text" data-i18n="tableau.text">A one-page report presenting overall sales KPIs.</p>
+              <ul class="card__tags" aria-label="Project technologies" data-i18n-attr="aria-label:a.ptech"><li class="tag">Tableau</li><li class="tag">KPI</li></ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-								</div>
-							</div>
-							
-						</section>
+  </main>
 
-						
-				</article>
+  <footer class="site-footer">
+    <div class="container">
+      <span>&copy; 2026 Katarzyna Tondaś</span>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/katarzynatondas/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/KatarzynaTondas/" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="#contact" data-user="tondas.katarzyna" data-domain="gmail.com" data-i18n="contact.mail">Write to me</a>
+        <a href="#main"><span data-i18n="footer.top">Back to top</span> <i class="fas fa-arrow-up" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </footer>
 
-			<!-- Footer -->
-				<footer id="footer">
-
-					<ul class="icons">
-						<!--<li><a href="#" class="icon brands circle fa-twitter"><span class="label">Twitter</span></a></li>-->
-						<!--<li><a href="#" class="icon brands circle fa-facebook-f"><span class="label">Facebook</span></a></li>-->
-						<li><a href="mailto:tondas.katarzyna@gmail.com" class="icon brands circle fa-google"><span class="label">Gmail</span></a></li>
-						<li><a href="https://www.linkedin.com/in/katarzynatondas/" class="icon brands circle fa-linkedin"><span class="label">Linkedin</span></a></li>
-						<li><a href="https://github.com/KatarzynaTondas/" class="icon brands circle fa-github"><span class="label">Github</span></a></li>
-						<!--<li><a href="#" class="icon brands circle fa-dribbble"><span class="label">Dribbble</span></a></li>-->
-					</ul>
-
-					<ul class="copyright" style="margin: 20px; padding: 20px;">
-						<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a> - The original work has been modified</li>
-					</ul>
-
-				</footer>
-
-		</div>
-
-		<!-- Scripts -->
-
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.dropotron.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
-		<script src="assets/js/jquery.scrollgress.min.js"></script>
-		<script src="assets/js/jquery.scrollex.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
-	</body>
+  <script src="assets/js/translations.js"></script>
+  <script src="assets/js/portfolio.js"></script>
+</body>
 </html>

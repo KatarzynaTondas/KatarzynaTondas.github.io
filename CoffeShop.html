@@ -1,270 +1,201 @@
-<!DOCTYPE HTML>
-<!--
-	Twenty by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Katarzyna Tondaś - analiza danych</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="pc.title">Coffee Shop – Power BI report | Katarzyna Tondaś</title>
+  <meta name="description" content="Interactive Power BI report on coffee shop sales, costs and margin, with a decomposition tree." data-i18n-attr="content:pc.desc">
+  <meta name="author" content="Katarzyna Tondaś">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#0b1220">
 
-		
-	</head>
-	<body class="no-sidebar is-preload">
-		<div id="page-wrapper">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Coffee Shop – Power BI report | Katarzyna Tondaś" data-i18n-attr="content:pc.title">
+  <meta property="og:description" content="Interactive Power BI report on coffee shop sales, costs and margin, with a decomposition tree." data-i18n-attr="content:pc.desc">
+  <meta property="og:image" content="images/CoffeShop1.png">
+  <meta property="og:locale" content="en_US">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/portfolio.css">
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="a.skip">Skip to content</a>
 
-			<!-- Header -->
-			<header id="header">
-				<h1 id="logo"><a href="index.html">Twenty <span>by HTML5 UP</span></a></h1>
-				<nav id="nav">
-					<ul>
-						<li class="current"><a href="index.html">Strona startowa</a></li>
-						<li><a href="Omnie.html">O mnie</a></li>
-						<li class="submenu has-submenu">
-							<a href="Portfolio.html" class="button primary">Portfolio</a>
-							<ul>
-								<li><a href="SalesAnalysis.html">Sales Analysis - raport Power BI</a></li>
-								<li><a href="CoffeShop.html">Coffe Shop - raport Power BI</a></li>
-								<li><a href="RaportTableau.html">Overview - raport Tableau</a></li>
-								<li><a href="AnalizaPython.html">Opływ klientów - analiza Python</a></li>
-								<li><a href="AnalizaSQL.html">COVID-19 - analiza SQL</a></li>
-							</ul>
-						</li>
-					</ul>
-				</nav>
-			</header>
-			
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html" aria-label="Katarzyna Tondaś – home page" data-i18n-attr="aria-label:a.home">
+        <span class="brand__mark" aria-hidden="true">KT</span>
+        Katarzyna Tondaś
+      </a>
 
-			<!-- Main -->
+      <nav class="nav" id="site-nav" aria-label="Main navigation" data-i18n-attr="aria-label:a.nav">
+        <ul class="nav__list">
+          <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+          <li><a href="index.html#projects" aria-current="true" data-i18n="nav.projects">Projects</a></li>
+          <li><a href="Omnie.html" data-i18n="nav.about">About me</a></li>
+          <li><a class="nav__cta" href="index.html#contact" data-i18n="nav.contact">Contact</a></li>
+        </ul>
+      </nav>
 
-			<article id="main">
+      <div class="header-tools">
+        <div class="lang-switch" role="group" aria-label="Language" data-i18n-attr="aria-label:a.lang">
+          <button type="button" class="lang-switch__btn" data-lang="en" lang="en" aria-pressed="true" title="English">EN</button>
+          <button type="button" class="lang-switch__btn" data-lang="pl" lang="pl" aria-pressed="false" title="Polski">PL</button>
+        </div>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+          <span class="nav-toggle__bars" aria-hidden="true"></span>
+          <span class="sr-only" data-i18n="a.menu">Menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main id="main">
 
-				<header class="special container">
-					<span class="icon solid fa-chart-area"></span>
-					<h1><span style="color: #83d3c9;"><b>Coffee Shop</b> </span><strong> interaktywny raport Power BI</strong></h1>
-					<p>dotyczący analizy danych sprzedażowych</p>
-				</header>
-					
-					<!-- One -->
-						<section class="wrapper style4 container">
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="container">
+        <a class="back-link" href="index.html#projects"><i class="fas fa-arrow-left" aria-hidden="true"></i> <span data-i18n="c.back">All projects</span></a>
+        <span class="page-hero__kicker" data-i18n="c.kicker.pbi">Power BI report</span>
+        <h1 id="page-title">Coffee Shop</h1>
+        <p class="page-hero__sub" data-i18n="pc.sub">An interactive report for analysing sales data.</p>
+        <ul class="chips" aria-label="Technologies" data-i18n-attr="aria-label:a.tech"><li class="chip">Power BI</li><li class="chip">DAX</li><li class="chip">Power Query</li></ul>
+      </div>
+    </section>
 
-							<!-- Content -->
-								<div class="content">
-									<section>
-											<h1><b>Opis projektu</b></h1>
-										<p>Projekt polegał na stworzeniu raportu analitycznego w narzędziu Microsoft Power BI. Głównym celem finalnego produktu jest możliwość przeprowadzenia analizy sprzedaży produktów w kontekście różnych czynników. Raport został zbudowany, aby wspierać procesy decyzyjne, dostarczając kluczowych informacji o wynikach sprzedaży, rentowności, liczbie transakcji oraz sezonowości. Cały proces obejmował przygotowanie danych, budowę modelu analitycznego oraz opracowanie finalnych wizualizacji, które umożliwiają interaktywną analizę danych w różnych ujęciach.</p>
-										<p>✧ Plik Power BI w formacie PBIX oraz dokumentacja zawierająca opis struktury i modelu danych, a także wyszczególnienie miar w języku DAX jest dostępny <a href="https://github.com/KatarzynaTondas/CoffeShopAnalysis-portfolio-Power-BI/"> w repozytorium Github.</a></p>
-										<p></p>
-										<br>
-										<a><p>➤ <b>Zastosowane technnologie:</b></p> </a>
-										<p text-indent: 20px;>✧ <b>Power Query</b> - importowanie, przetwarzanie, przygotowanie danych do wizualizacji.<p>
-										<p text-indent: 20px;>✧ <b>DAX</b> - wykorzystywany do obliczania wskaźników, miar oraz tworzenia tabel.<p></p>
-										<p text-indent: 20px;>✧ <b>Power BI</b> - wizualizacja danych i tworzenie interaktywnych pulpitów nawigacyjnych.<p></p>
-										<br>
-										<a><p>➤ <b>Opis raportu:</b></p> </a>
-										<p>Raport składa się z czterech kart: </p>
-										<style>
-											ol {
-												margin: 2; /* Zmniejsza margines wokół listy */
-												padding: 2; /* Zmniejsza odstęp wewnętrzny listy */
-											}
-											ol li {
-												margin-bottom: 5px; /* Zmniejsza odstęp między elementami listy */
-											}
-										</style>
-										<ol>
-											<li> <b>Strona tytułowa</b> - strona wstępna z wprowadzeniem do raportu.</li>
-											<li> <b>Sprzedaż</b> - karta prezentująca główne wskaźniki KPI, trend sprzedaży oraz kosztów w wybranym przez Użytkownika raportu okresie w odniesieniu do marży %. </li>
-											<li> <b>Produkty</b> - karta zawierająca dane szczegółowe dotyczące sprzedaży oraz kosztów poszczególnych produktów m.in. według kategorii, top sprzedających się produktów, sprzedaży narastająco w ujęciu MTD oraz YTD, udziału sprzedaży produktów zawierających alergeny. </li>
-											<li> <b>Drzewo dekompozycji</b> - wizaualizacja dynamiczna, umożliwiająca analizę wybranej wielkości: marży, kosztów lub sprzedaży pod kątem nałożonych przez Użytkownika filtrów. </li>
-										</ol>
-										<figure>
-											<a href="#" class="image featured" onclick="zoomImage(event)">
-												<img src="images/CoffeShop2.png" alt="Obrazek" />
-											</a>
-											<figcaption class="caption">Rys. 1. Widok karty Sprzedaż z nałożonym filtrem na rok 2023.</figcaption>
-										</figure>
-										
-										<style>
-											.caption {
-												font-size: 12px; /* Zmienia rozmiar czcionki */
-												color: #555; /* Zmienia kolor tekstu */
-												text-align: center; /* Wyrównuje tekst do środka */
-												margin-top: 1px;  /* Dodaje odstęp powyżej podpisu */
-												margin-bottom: 20px;
-											}
-										</style>
-										<a><p>➤ <b>Zasada "od ogółu do szczegółu":</b></p> </a>
-										Jednym z założeń, którym kierowałam się podczas projektowania układu raportu była prezentacja danych w ujęciu od ogółu do szczegółu. Zostało to zrealizowane poprzez budowę trzech kart raportu, a każda z nich umożliwia przeprowadzenie coraz bardziej szczegółowej analizy. Karta <b>Sprzedaż</b> (Rys.1.) została tak zaprojektowana, aby dawać ogólny wgląd w analizę sprzedży, kosztów i marży. 
-										Karta <b>Produkty</b> (Rys. 2.) umożliwia zagłębienie się w dalsze szczegóły wskaźników, które zainteresowały Użytkownika raportu.
-									    Natomiast, <b>drzewo dekompozycji</b> (Rys.3.), umieszczone na ostatniej karcie to dynamiczna i interaktywna wizualizacja, która pozwala na analizę danych w wielu wymiarach. Automatycznie agreguje dane i umożliwia przechodzenie do szczegółów w dowolnej kolejności. 
-										Drzewo dekompozycji jest potężnym narzędziem do analizy danych, które może znacząco ułatwić zrozumienie złożonych zestawów danych i podejmowanie decyzji biznesowych. </p>
-										<figure>
-											<a href="#" class="image featured" onclick="zoomImage(event)">
-												<img src="images/CoffeShop3.png" alt="" />
-											</a>
-											<figcaption class="caption">Rys. 2. Widok karty Produkty - umożliwiającej szczegółową analizę danych.</figcaption>
-										</figure>
-										
-										<style>
-											.caption {
-												font-size: 12px; /* Zmienia rozmiar czcionki */
-												color: #555; /* Zmienia kolor tekstu */
-												text-align: center; /* Wyrównuje tekst do środka */
-												margin-top: 1px;  /* Dodaje odstęp powyżej podpisu */
-												margin-bottom: 20px;
-											}
-										</style>
+    <section class="section">
+      <div class="container layout">
+        <article class="prose">
+          <h2 data-i18n="c.h.desc">Project description</h2>
+          <p data-i18n="pc.p1">The project was to build an analytical report in Microsoft Power BI. The main goal of the final product is to let users analyse product sales in the context of different factors. The report was built to support decision-making by providing key information on sales results, profitability, the number of transactions and seasonality. The whole process covered data preparation, building the analytical model and creating the final visualisations, which allow interactive analysis of the data from different angles.</p>
+          <p data-i18n="pc.p2">The Power BI file (PBIX) and documentation describing the structure and data model, with a list of DAX measures, are available <a href="https://github.com/KatarzynaTondas/CoffeShopAnalysis-portfolio-Power-BI/">in the GitHub repository</a>.</p>
 
+          <h2 data-i18n="c.h.tech">Technologies used</h2>
+          <ul class="tech-list plain">
+  <li data-i18n="c.t.pq"><strong>Power Query</strong> – importing, transforming and preparing data for visualisation.</li>
+  <li data-i18n="c.t.dax"><strong>DAX</strong> – calculating indicators and measures and creating tables.</li>
+  <li data-i18n="c.t.pbi"><strong>Power BI</strong> – visualising data and building interactive dashboards.</li>
+</ul>
 
-												<figure>
-													<a href="#" class="image featured" onclick="zoomImage(event)">
-														<img src="images/CoffeShop4.png" alt="" />
-													</a>
-													<figcaption class="caption">Rys. 3. Prezentacja wizualizacji drzewo dekompozycji.</figcaption>
-												</figure>
-												
-												<style>
-													.caption {
-														font-size: 12px; /* Zmienia rozmiar czcionki */
-														color: #555; /* Zmienia kolor tekstu */
-														text-align: center; /* Wyrównuje tekst do środka */
-														margin-top: 1px;  /* Dodaje odstęp powyżej podpisu */
-														margin-bottom: 20px;
-													}
-												</style>
-									</section>
-									<header>
-										<h1><b>ZALETY BUDOWANIA RAPORTÓW W POWER BI</b></h1>
-										
-									</header>
-									<style>
-										p {
-											margin-bottom: 20px; /* Zmniejsza odstęp poniżej elementu <p> */
-										}
-									</style>
+          <h2 data-i18n="ps.h.rep">Report structure</h2>
+          <p data-i18n="pc.rep.intro">The report has four pages:</p>
+          <ul class="steps">
+  <li data-i18n="pc.s1"><strong>Title page</strong> – an introductory page with an introduction to the report.</li>
+  <li data-i18n="pc.s2"><strong>Sales</strong> – the main KPIs and the trend of sales and costs in the period selected by the user, set against margin %.</li>
+  <li data-i18n="pc.s3"><strong>Products</strong> – detailed data on sales and costs of individual products, including by category, top-selling products, cumulative sales (MTD and YTD) and the share of sales of products containing allergens.</li>
+  <li data-i18n="pc.s4"><strong>Decomposition tree</strong> – a dynamic visual for analysing a selected measure (margin, costs or sales) under the filters applied by the user.</li>
+</ul>
+          <figure class="shot">
+  <a class="shot__link" href="images/CoffeShop2.png"><img src="images/CoffeShop2.png" width="3044" height="1708" loading="lazy" decoding="async" alt="Sales page of the Coffee Shop report filtered to 2023" data-i18n-attr="alt:pc.fig1.alt"><span class="shot__zoom" aria-hidden="true"><i class="fas fa-search-plus"></i></span></a>
+  <figcaption data-i18n="pc.fig1.cap">Fig. 1. The Sales page with a filter set to 2023.</figcaption>
+</figure>
 
-									<style>
-										ol {
-											margin: 2; /* Zmniejsza margines wokół listy */
-											padding: 2; /* Zmniejsza odstęp wewnętrzny listy */
-										}
-										ol li {
-											margin-bottom: 10px; /* Zmniejsza odstęp między elementami listy */
-										}
-									</style>
-									<ol class="custom-list">
-   									<li><b>Przejrzystość i efektywność</b> - dzięki zaawansowanym funkcjom analitycznym i możliwości tworzenia interaktywnych raportów, Power BI pomaga w przejrzystej i efektywnej prezentacji danych, co ułatwia podejmowanie decyzji biznesowych.</li>
-    								<li><b>Integracja z różnymi źródłami danych</b> - Power BI umożliwia integrację danych z różnych źródeł, takich jak bazy danych, pliki Excel, usługi chmurowe czy aplikacje biznesowe, co pozwala na tworzenie kompleksowych i spójnych raportów.</li>
-    								<li><b>Interaktywność</b> - Użytkownicy mogą wchodzić w interakcje z danymi, filtrując je, sortując i eksplorując różne widoki. To pozwala na głębszą analizę i lepsze zrozumienie danych.</li>
-   									<li><b>Łatwość porównywania danych</b> - dynamiczne wykresy, pozwalają na szybkie porównanie wartości między różnymi kategoriami oraz analizę trendów w danych.</li>
-									<li><b>Dobór częstotliwości odświeżania danych</b> - w zależności od potrzeby biznesowej, użytkownik może określić częstotliwość odświeżania danych, co pozwala na dostosowanie analizy do specyficznych wymagań i zapewnienia aktualność informacji.</li>
+          <h2 data-i18n="pc.h.principle">From overview to detail</h2>
+          <p data-i18n="pc.p3">One of the principles I followed when designing the layout was to present data from the general to the detailed. I did this with three analytical pages, each enabling a more detailed analysis. The <strong>Sales</strong> page (Fig. 1) gives a general view of sales, costs and margin. The <strong>Products</strong> page (Fig. 2) lets you go deeper into the indicators that interest the user. The <strong>decomposition tree</strong> (Fig. 3), on the last page, is a dynamic, interactive visual for analysing data in many dimensions. It aggregates data automatically and lets you drill down in any order. It is a powerful tool that can greatly help in understanding complex datasets and in making business decisions.</p>
+          <figure class="shot">
+  <a class="shot__link" href="images/CoffeShop3.png"><img src="images/CoffeShop3.png" width="3058" height="1707" loading="lazy" decoding="async" alt="Products page of the Coffee Shop report" data-i18n-attr="alt:pc.fig2.alt"><span class="shot__zoom" aria-hidden="true"><i class="fas fa-search-plus"></i></span></a>
+  <figcaption data-i18n="pc.fig2.cap">Fig. 2. The Products page – detailed data analysis.</figcaption>
+</figure>
+          <figure class="shot">
+  <a class="shot__link" href="images/CoffeShop4.png"><img src="images/CoffeShop4.png" width="3052" height="1713" loading="lazy" decoding="async" alt="Decomposition tree in the Coffee Shop report" data-i18n-attr="alt:pc.fig3.alt"><span class="shot__zoom" aria-hidden="true"><i class="fas fa-search-plus"></i></span></a>
+  <figcaption data-i18n="pc.fig3.cap">Fig. 3. The decomposition tree visual.</figcaption>
+</figure>
 
-								</ol>
+          <details class="disclosure">
+  <summary data-i18n="why.pbi.title">Why build reports in Power BI</summary>
+  <div class="disclosure__body">
+<ul>
+  <li data-i18n="why.pbi.1"><strong>Clarity and efficiency</strong> – advanced analytical features and interactive reports help present data clearly and efficiently, which makes business decisions easier.</li>
+  <li data-i18n="why.pbi.2"><strong>Integration with many data sources</strong> – Power BI connects data from databases, Excel files, cloud services and business applications, so reports can be comprehensive and consistent.</li>
+  <li data-i18n="why.pbi.3"><strong>Interactivity</strong> – users can interact with the data by filtering, sorting and exploring different views, which allows deeper analysis and better understanding.</li>
+  <li data-i18n="why.pbi.4"><strong>Easy comparison of data</strong> – dynamic charts make it quick to compare values across categories and to analyse trends.</li>
+  <li data-i18n="why.pbi.5"><strong>Choice of refresh frequency</strong> – depending on business needs, the user can set how often data is refreshed, so the analysis matches specific requirements and stays up to date.</li>
+</ul>
+  </div>
+</details>
 
-									<style>
-									.custom-list {
-    								list-style-type: disc;
-									}
-								</style>
-								</div>
-								<a><p>➤ <b>Źródło danych:</b></p> </a>
-								<p>Projekt został wykonany w ramach kursu:<a href="https://odczarujpowerbi.pl/"> 5-dniowe wyzwanie Power BI z elementami AI</a> a następnie rozbudowany (dane zawierają szerszy okres czasu i dodatkowe dane niż dane źródłowe z kursu).</p>
-							</section>
+          <h2 data-i18n="c.h.src">Data source</h2>
+          <p data-i18n="pc.src">The project was created as part of the course <a href="https://odczarujpowerbi.pl/">5-day Power BI challenge with AI elements</a> and then extended (the data covers a longer period and contains more than the course's source data).</p>
+        </article>
+      <aside class="aside" aria-labelledby="facts-title">
+        <h2 id="facts-title" data-i18n="c.facts">Project facts</h2>
+        <dl class="facts">
+          <div><dt data-i18n="c.type">Type</dt><dd><span data-i18n="pc.f.type">Interactive report</span></dd></div>
+          <div><dt data-i18n="c.tools">Tools</dt><dd><ul class="chips"><li class="chip">Power BI</li><li class="chip">DAX</li><li class="chip">Power Query</li></ul></dd></div>
+          <div><dt data-i18n="c.data">Data</dt><dd><span data-i18n="pc.f.data">Course data, extended</span></dd></div>
+          <div><dt data-i18n="c.links">Links</dt><dd><a href="https://github.com/KatarzynaTondas/CoffeShopAnalysis-portfolio-Power-BI/" target="_blank" rel="noopener noreferrer" data-i18n="pc.f.repo">Power BI file and documentation</a><br><a href="https://odczarujpowerbi.pl/" target="_blank" rel="noopener noreferrer" data-i18n="pc.f.course">Course: 5-day Power BI challenge</a></dd></div>
+        </dl>
+      </aside>
+      </div>
+    </section>
 
-					<!-- Two -->
-						<section class="wrapper style1 container special">
-							<div class="row">
-								<div class="col-4 col-12-narrower">
+    <section class="section related" aria-labelledby="more-title">
+      <div class="container">
+        <div class="section__head reveal">
+          <span class="section__kicker">Portfolio</span>
+          <h2 class="section__title" id="more-title" data-i18n="c.more">More projects</h2>
+          <p class="section__desc" data-i18n="c.more.desc">Other reports and analyses from my portfolio.</p>
+        </div>
+        <div class="grid">
+          <article class="card reveal">
+            <div class="card__media">
+              <span class="card__tool">Tableau</span>
+              <img src="images/RaportTableau.png" width="1200" height="750" loading="lazy" decoding="async"
+                   alt="One-page Tableau report with overall sales indicators" data-i18n-attr="alt:tableau.alt">
+              <div class="card__overlay" aria-hidden="true"><span><span data-i18n="proj.view">View project</span> <i class="fas fa-arrow-right"></i></span></div>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title"><a href="RaportTableau.html" data-i18n="tableau.title">Overview in Tableau</a></h3>
+              <p class="card__text" data-i18n="tableau.text">A one-page report presenting overall sales KPIs.</p>
+              <ul class="card__tags" aria-label="Project technologies" data-i18n-attr="aria-label:a.ptech"><li class="tag">Tableau</li><li class="tag">KPI</li></ul>
+            </div>
+          </article>
+          <article class="card reveal">
+            <div class="card__media">
+              <span class="card__tool">Python</span>
+              <img src="images/AnalizaPython.png" width="1200" height="750" loading="lazy" decoding="async"
+                   alt="Customer churn analysis in Python – chart from Jupyter Notebook" data-i18n-attr="alt:churn.alt">
+              <div class="card__overlay" aria-hidden="true"><span><span data-i18n="proj.view">View project</span> <i class="fas fa-arrow-right"></i></span></div>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title"><a href="AnalizaPython.html" data-i18n="churn.title">Customer churn</a></h3>
+              <p class="card__text" data-i18n="churn.text">Customer churn analysis built in Jupyter Notebook.</p>
+              <ul class="card__tags" aria-label="Project technologies" data-i18n-attr="aria-label:a.ptech"><li class="tag">Python</li><li class="tag">Jupyter</li></ul>
+            </div>
+          </article>
+          <article class="card reveal">
+            <div class="card__media">
+              <span class="card__tool">SQL</span>
+              <img src="images/CovidSQL.png" width="1200" height="750" loading="lazy" decoding="async"
+                   alt="SQL queries for COVID-19 data analysis" data-i18n-attr="alt:covid.alt">
+              <div class="card__overlay" aria-hidden="true"><span><span data-i18n="proj.view">View project</span> <i class="fas fa-arrow-right"></i></span></div>
+            </div>
+            <div class="card__body">
+              <h3 class="card__title"><a href="AnalizaSQL.html" data-i18n="covid.title">COVID-19 in SQL</a></h3>
+              <p class="card__text" data-i18n="covid.text">A set of SQL queries created to analyse COVID-19 data.</p>
+              <ul class="card__tags" aria-label="Project technologies" data-i18n-attr="aria-label:a.ptech"><li class="tag">SQL</li></ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-									<section>
-										<header>
-											<h3>Raport w Tableau</h3>
-											<a href="RaportTableau.html" class="image featured" style="margin-bottom: 10px;"><img src="images/RaportTableau.png" alt="" /></a>
-										</header>
-										<p>Raport typu Overview prezentujący ogólne wskaźniki danych sprzedażowych.</p>
-										<footer>
-											<ul class="buttons">
-												<li><a href="RaportTableau.html" class="button small">więcej</a></li>
-											</ul>
-										</footer>
-									</section>
-								</div>
-								
-								<div class="col-4 col-12-narrower">
+  </main>
 
-									<section>
-										<header>
-											<h3>Analiza Python</h3>
-											<a href="AnalizaPython.html" class="image featured" style="margin-bottom: 10px;"><img src="images/AnalizaPython.png" alt="" /></a>
-										</header>
-										<p>Analiza danych dotycząca odpływu klientów wykonana w Jupyter Notebook.</p>
-										<footer>
-											<ul class="buttons">
-												<li><a href="AnalizaPython.html" class="button small">więcej</a></li>
-											</ul>
-										</footer>
-									</section>						
-								</div>
-								
-								<div class="col-4 col-12-narrower">
+  <footer class="site-footer">
+    <div class="container">
+      <span>&copy; 2026 Katarzyna Tondaś</span>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/katarzynatondas/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/KatarzynaTondas/" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="#contact" data-user="tondas.katarzyna" data-domain="gmail.com" data-i18n="contact.mail">Write to me</a>
+        <a href="#main"><span data-i18n="footer.top">Back to top</span> <i class="fas fa-arrow-up" aria-hidden="true"></i></a>
+      </div>
+    </div>
+  </footer>
 
-									<section>
-										<header>
-											<h3>Analiza SQL</h3>
-											<a href="AnalizaSQL.html" class="image featured" style="margin-bottom: 10px;"><img src="images/CovidSQL.png" alt="" /></a>
-										</header>
-										<p>Zbiór zapytań SQL utworzonych w celu analizy danych COVID-19.</p>
-										<footer>
-											<ul class="buttons">
-												<li><a href="AnalizaSQL.html" class="button small">więcej</a></li>
-											</ul>
-										</footer>
-									</section>
-
-								</div>
-							</div>
-							
-						</section>
-
-						
-				</article>
-
-			<!-- Footer -->
-				<footer id="footer">
-
-					<ul class="icons">
-						<!--<li><a href="#" class="icon brands circle fa-twitter"><span class="label">Twitter</span></a></li>-->
-						<!--<li><a href="#" class="icon brands circle fa-facebook-f"><span class="label">Facebook</span></a></li>-->
-						<li><a href="mailto:tondas.katarzyna@gmail.com" class="icon brands circle fa-google"><span class="label">Gmail</span></a></li>
-						<li><a href="https://www.linkedin.com/in/katarzynatondas/" class="icon brands circle fa-linkedin"><span class="label">Linkedin</span></a></li>
-						<li><a href="https://github.com/KatarzynaTondas/" class="icon brands circle fa-github"><span class="label">Github</span></a></li>
-						<!--<li><a href="#" class="icon brands circle fa-dribbble"><span class="label">Dribbble</span></a></li>-->
-					</ul>
-
-					<ul class="copyright" style="margin: 20px; padding: 20px;">
-						<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a> - The original work has been modified</li>
-					</ul>
-
-				</footer>
-
-		</div>
-
-		<!-- Scripts -->
-
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.dropotron.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
-		<script src="assets/js/jquery.scrollgress.min.js"></script>
-		<script src="assets/js/jquery.scrollex.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
-	</body>
+  <script src="assets/js/translations.js"></script>
+  <script src="assets/js/portfolio.js"></script>
+</body>
 </html>
