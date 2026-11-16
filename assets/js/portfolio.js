@@ -108,7 +108,7 @@
       });
 
       cards.forEach(function (card) {
-        var match = value === 'all' || card.getAttribute('data-category') === value;
+        var match = value === 'all' || (card.getAttribute('data-category') || '').split(/\s+/).indexOf(value) !== -1;
         card.hidden = !match;
       });
     });

@@ -125,6 +125,32 @@
   </div>
 </details>
 
+          <details class="disclosure">
+  <summary data-i18n="why.sm.title">Why a well-designed semantic model matters</summary>
+  <div class="disclosure__body">
+<ul>
+  <li data-i18n="why.sm.1"><strong>Correct results</strong> – a clean model with fact and dimension tables (star schema) and well-defined relationships makes sure that measures are filtered and aggregated as intended, so the numbers can be trusted.</li>
+  <li data-i18n="why.sm.2"><strong>Performance</strong> – a compact, well-structured model is smaller and faster; reports open quickly and visuals respond instantly to filters.</li>
+  <li data-i18n="why.sm.3"><strong>One source of truth</strong> – KPIs and business logic are defined once, as DAX measures in the model, so every report and every user gets the same definition of, for example, margin or sales.</li>
+  <li data-i18n="why.sm.4"><strong>Simpler, more reliable DAX</strong> – with a proper model, measures stay short and readable instead of working around data problems, which also makes them easier to maintain and extend.</li>
+  <li data-i18n="why.sm.5"><strong>Flexible, scalable analysis</strong> – new tables, dimensions and measures can be added without rebuilding the reports, and users can explore the data freely (slicing, drill-down, decomposition tree) without breaking the logic.</li>
+</ul>
+  </div>
+</details>
+
+          <details class="disclosure">
+  <summary data-i18n="why.sec.title">How to secure data in Power BI</summary>
+  <div class="disclosure__body">
+<ul>
+  <li data-i18n="why.sec.1"><strong>Power BI Service as the control point</strong> – reports are shared through workspaces and apps, and access is managed with workspace roles (Admin, Member, Contributor, Viewer) and permissions to the semantic model, instead of sending files around.</li>
+  <li data-i18n="why.sec.2"><strong>Row-level security (RLS)</strong> – roles with DAX filters decide which rows each user can see, for example only their own region or team. The filter can be dynamic, based on the signed-in user (USERPRINCIPALNAME), and users are assigned to roles in Power BI Service.</li>
+  <li data-i18n="why.sec.3"><strong>Object-level security (OLS)</strong> – hides entire tables or columns (for example salaries or personal data) from selected roles, so users without access do not even see that they exist. It is configured in the model, for example with Tabular Editor.</li>
+  <li data-i18n="why.sec.4"><strong>Know the limits</strong> – RLS and OLS apply to users with the Viewer role; people who can edit the content in the workspace (Admin, Member, Contributor) are not restricted by them. Roles should always be tested with “View as” before publishing.</li>
+  <li data-i18n="why.sec.5"><strong>Additional layers</strong> – sensitivity labels (Microsoft Purview), sign-in with Microsoft Entra ID and multi-factor authentication, and the principle of least privilege: give people only the access they need.</li>
+</ul>
+  </div>
+</details>
+
           <h2 data-i18n="c.h.src">Data source</h2>
           <p data-i18n="ps.src">The fact and dimension tables were generated with Python code, based on designed assumptions. The Python code is available <a href="https://github.com/KatarzynaTondas/Python_script-Sample_data">in the GitHub repository</a>.</p>
         </article>
